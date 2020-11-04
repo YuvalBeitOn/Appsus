@@ -33,18 +33,19 @@ function removeMail(id){
 
 function _createMails(){
     gMails = []
-    gMails.push(createMail('Guy','Sprint 3 is On!',utilService.makeLorem(15)))
-    gMails.push(createMail('Moshe','Yaron Biton Show',utilService.makeLorem(15)))
-    gMails.push(createMail('Manham','New day',utilService.makeLorem(20)))
-    gMails.push(createMail('Bob Habani','I Have Work for you',utilService.makeLorem(5),true))
-    gMails.push(createMail('Gantz','Wassap? ',utilService.makeLorem(10)))
+    gMails.push(createMail('Guy','guy235@gmail.com','Sprint 3 is On!',utilService.makeLorem(15)))
+    gMails.push(createMail('Yaron biton','yaron-Biton@gmail.com','Yaron Biton Show',utilService.makeLorem(15)))
+    gMails.push(createMail('Manham','manham-cohen@gmail.com','New day',utilService.makeLorem(20)))
+    gMails.push(createMail('Bob Habani','bobTheMen@gmail.com','I Have Work for you',utilService.makeLorem(5),true))
+    gMails.push(createMail('Gantz','beni-antz@gmail.com','Wassap? ',utilService.makeLorem(10)))
     return gMails;
 }
 
-function createMail(sender,subject,body,isRead=false){
+function createMail(sender,senderMail,subject,body,isRead=false){
 return {
     id:utilService.makeId(),
     sender,
+    senderMail,
     subject,
     body,
     isRead,

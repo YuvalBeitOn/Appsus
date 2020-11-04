@@ -12,7 +12,6 @@ function getMails(){
     return Promise.resolve(gMails)
 }
 
-
 function saveMailToSentInbox(mail){
     mail.id = utilService.makeId()
     sentMsgs.unshift(mail)
@@ -49,6 +48,9 @@ return {
     subject,
     body,
     isRead,
+    isSent:false,
+    isStar:false,
+    isDraft:false,
     sentAt:Date.now()
 }
 }

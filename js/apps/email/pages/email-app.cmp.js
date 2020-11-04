@@ -1,10 +1,10 @@
 import { emailService } from '../../email/service/email-service.js'
-import bookList from '../../email/cmps/book-list.cmp.js'
+import emailList from '../../email/cmps/email-list.cmp.js'
 export default {
     template: `
         <section class="email-app">
         <h1>I am your Email APP </h1>
-        <book-list :mails="mails"></book-list>
+        <email-list :mails="mails"></email-list>
         </section>
     `,
     data() {
@@ -21,6 +21,6 @@ export default {
     },
     components: {
         emailService,
-        bookList
+        emailList
     }
 }

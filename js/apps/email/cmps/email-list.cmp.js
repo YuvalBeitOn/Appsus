@@ -1,8 +1,9 @@
 
 export default {
-    props:['mails'],
-    template:
-     `<section>
+    name: 'email-list',
+    props: ['mails'],
+    template: `
+    <section>
         <h1>I am your email List component</h1>
         <ul>
         <li v-for="currMail in mails" :key="currMail.id" >
@@ -10,8 +11,8 @@ export default {
         </li>
     </ul>
     </section>`,
-    data(){
-        return{
+    data() {
+        return {
         }
     }
 }

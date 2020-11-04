@@ -1,9 +1,9 @@
 export default {
     props: ["txt"],
     template: `
-      <template>
+      <section>
         <p>{{textToShow}}</p>
-      </template>
+      </section>
       `,
     data() {
       return {

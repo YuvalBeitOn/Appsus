@@ -1,27 +1,24 @@
 
-import { myRouter } from './routes.js'
-import appHeader from "./cmp/book-header.cmp.js";
-import appFooter from "./cmp/book-footer.cmp.js";
-import userMsg from "./cmp/user-msg.cmp.js"
-
+// import { myRouter } from './routes.js'
+import appHeader from "./cmps/app-header.cmp.js"
+import appFooter from './cmps/app-footer.cmp.js';
+import userMsg from "./cmps/user-msg.cmp.js"
 
 
 const options = {
   el: "#app",
-  router:myRouter,
+//   router:myRouter,
   template: `
     <section class="flex column">
     <app-header />
-    <main class="main-content grow">
     <user-msg></user-msg>
-      <router-view ></router-view>
-    </main>
+      <!-- <router-view ></router-view> -->
     <app-footer />
     </section>
     `,
     components:{
-      bookHeader,
-      bookFooter,
+      appHeader,
+      appFooter,
       userMsg
     }
 };

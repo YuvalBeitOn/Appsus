@@ -1,4 +1,4 @@
-import { utilService } from '../../../services/util.service'
+import { utilService } from '../../../services/util.service.js'
 var gMails = _createMails()
 export const emailService = {
     getMails,

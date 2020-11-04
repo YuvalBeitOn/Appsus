@@ -7,10 +7,10 @@ export default {
             <button @click="onRemoveMail()"><i class="fas fa-trash"></i>
             </button>
             </section>
-
             <input type="checkbox" v-model="isSelected"/>
-            <label for="star-checkbox">{{starMarker}}</label>
-            <input v-show="false" id="star-checkbox" type="checkbox" v-model="isStarred"/>
+            <i @click="onStarClicked" class="fas fa-star"></i>
+            <!-- <label for="star-checkbox">{{starMarker}}</label>
+            <input v-show="false" id="star-checkbox" type="checkbox" v-model="isStarred"/> -->
            <div class="email-sender">{{mail.sender}}</div>
            <div class="email-subject">{{mail.subject}}</div>
            <div class="email-body">{{mail.body}}</div>
@@ -26,11 +26,11 @@ export default {
     methods: {
         onRemoveMail() {
             emailService.removeMail(this.mail.id)
+        },
+        onStarClicked(){
+            console.log(this.mail.id)
         }
     },
     computed: {
-        starMarker() {
-           return (this.isStarred) ? 'STARREDDDDDDD' : 'NOT'
-        }
     }
 }

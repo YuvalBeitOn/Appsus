@@ -9,9 +9,9 @@ export default {
     <i @click="removeMail(mail.id)" class="fas fa-trash-alt mr-5"></i>
     </div>
     <div class="massage mt-5">
-    <h3>{{mail.subject}}</h3>
-    <h4><strong class="mr-5">{{mail.sender}}</strong><span class="mail-address">{{mailAdress}}</span></h4>
-    <p class="mail-body">{{mail.body}}</p>
+    <h3 class="mb-5">{{mail.subject}}</h3>
+    <h4><strong class="mr-5 mt">{{mail.sender}}</strong><span class="mail-address">{{mailAdress}}</span></h4>
+    <p class="mail-body mt-5">{{mail.body}}</p>
     </div>
     </section>
     `,

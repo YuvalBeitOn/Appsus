@@ -6,10 +6,10 @@ export default {
              <h1 class="logo">Appsus</h1>
         </div>
         <nav class="main-nav flex space-between">
-            <router-link to="/">Home</router-link>
-            <router-link to="/email/inbox">Email</router-link>
-            <router-link to="/keep">Keep</router-link>
-            <router-link to="/books">Books</router-link>
+            <router-link to="/" exact>Home</router-link>
+            <router-link to="/email/inbox" exact>Email</router-link>
+            <router-link to="/keep" exact>Keep</router-link>
+            <router-link to="/books" exact>Books</router-link>
         </nav>
     </header>
       `

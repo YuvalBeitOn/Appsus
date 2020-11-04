@@ -4,7 +4,6 @@ export default {
     props: ['mails'],
     template: `
     <section class="email-list flex column">
-        <h1>I am your email List component</h1>
         <ul>
         <li v-for="currMail in mails" :key="currMail.id" >
            <email-preview :mail="currMail" />

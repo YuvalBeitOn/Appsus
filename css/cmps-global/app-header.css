@@ -14,3 +14,7 @@ margin-right: 0.3125rem;
     font-weight: 500;
     text-transform: capitalize;
 }
+.app-header .router-link-active {
+    color: rgb(210, 218, 208);
+    font-weight: bolder;
+  }

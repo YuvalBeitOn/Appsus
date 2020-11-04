@@ -1,19 +1,20 @@
 import { emailService } from '../../email/service/email-service.js';
+import longText from '../../../cmps/long-text.cmp.js';
 export default {
     props: ['mail'],
     template: `
         <router-link :to="'/email/inbox/'+mail.id">  
-        <section class="email-preview flex space-between" :class="sectionState">
+        <section class="email-preview flex" :class="sectionState">
             <section v-if="isSelected" class="email-buttons">
             <button @click.prevent.stop="onRemoveMail()"><i class="fas fa-trash"></i>
             </button>
             </section>
             <input @click.stop type="checkbox" v-model="isSelected"/>
-            <i @click.prevent.stop="onStarClicked" class="fas fa-star" :class="starClass"></i>
+            <i @click.prevent.stop="onStarClicked" class="fas fa-star mr-5 ml-5 " :class="starClass"></i>
            <div class="email-sender" :class="readState">{{mail.sender}}</div>
-           <div class="email-subject" :class="readState">{{mail.subject}}</div>
-           <div class="email-body">{{mail.body}}</div>
-           <div class="email-date">{{mail.sentAt}}</div>
+           <div class="email-subject" :class="readState">{{mail.subject}} - </div>
+           <div class="email-body"><long-text :txt="mail.body"></long-text></div>
+           <div class="email-date align-self-end" :class="readState">{{mail.sentAt}}</div>
         </section>
         </router-link>
     `,
@@ -39,8 +40,11 @@ export default {
             return { unreadedmail: (!this.mail.isRead) }
         },
         sectionState(){
-            return {sectionreaded: (this.mail.isRead)}
+            return {'section-readed': (this.mail.isRead),'section-marked':this.isSelected}
         }
 
+    },
+    components:{
+        longText,
     }
 }

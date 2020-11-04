@@ -43,7 +43,13 @@ function _createMails(){
     gMails.push(createMail('Yaron biton','yaron-Biton@gmail.com','Yaron Biton Show',utilService.makeLorem(15)))
     gMails.push(createMail('Manham','manham-cohen@gmail.com','New day',utilService.makeLorem(20)))
     gMails.push(createMail('Bob Habani','bobTheMen@gmail.com','I Have Work for you',utilService.makeLorem(5),true))
-    gMails.push(createMail('Gantz','beni-antz@gmail.com','Wassap? ',utilService.makeLorem(10)))
+    gMails.push(createMail('Yoel Shani','yoel-antz@gmail.com','You must to be content with me ',utilService.makeLorem(10)))
+    gMails.push(createMail('Bob Dylan','bob-dylan@gmail.com','I hear about the new movie? ',utilService.makeLorem(10)))
+    gMails.push(createMail('Tomer aviv','lamalo@gmail.com','I going to us tomorrow ',utilService.makeLorem(10)))
+    gMails.push(createMail('Niv Shamsi','niv-shamsi@gmail.com','I am in israel',utilService.makeLorem(10)))
+    gMails.push(createMail('Barel Zrian','Barel-zrian@gmail.com','Blitz digital come to us',utilService.makeLorem(10)))
+    gMails.push(createMail('Adir Surya','beni-antz@gmail.com','I am going to study',utilService.makeLorem(10)))
+    gMails.push(createMail('Maria','beni-antz@gmail.com','Jorge? I need to speak with you',utilService.makeLorem(10)))
     return gMails;
 }
 

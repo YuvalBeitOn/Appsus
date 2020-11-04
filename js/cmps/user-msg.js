@@ -1,4 +1,4 @@
-import {eventBus} from '../service/event-bus-service.js'
+import { eventBus } from '../services/event-bus-service.js'
 
 
 export default {
@@ -20,7 +20,7 @@ export default {
     created() {
         eventBus.$on('show-msg', msg => {
             this.msg = msg
-            setTimeout(()=>{
+            setTimeout(() => {
                 this.msg = null;
             }, 2000)
         })

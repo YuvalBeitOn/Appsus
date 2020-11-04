@@ -3,7 +3,7 @@ export default {
     template: `
     <header class="app-header flex space-between align-center">
         <div class="logo-container">
-             <h1 class="logo">APPSUS</h1>
+             <h1 class="logo">Appsus</h1>
         </div>
         <nav class="main-nav flex space-between">
             <router-link to="/">Home</router-link>

@@ -10,15 +10,8 @@ export default {
             </section>
             <input @click.stop type="checkbox" v-model="isSelected"/>
             <i @click.prevent.stop="onStarClicked" class="fas fa-star" :class="starClass"></i>
-<<<<<<< HEAD
-            <!-- <label for="star-checkbox">{{starMarker}}</label>
-            <input v-show="false" id="star-checkbox" type="checkbox" v-model="isStarred"/> -->
            <div class="email-sender" :class="readState">{{mail.sender}}</div>
            <div class="email-subject" :class="readState">{{mail.subject}}</div>
-=======
-           <div class="email-sender">{{mail.sender}}</div>
-           <div class="email-subject">{{mail.subject}}</div>
->>>>>>> 28c2cb880b80a0e68da47b326e0ca2f4c4826945
            <div class="email-body">{{mail.body}}</div>
            <div class="email-date">{{mail.sentAt}}</div>
         </section>

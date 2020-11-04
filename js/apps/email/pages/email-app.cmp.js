@@ -6,7 +6,7 @@ export default {
         <section class="email-app">pi
         <h1>I am your Email APP </h1>
         <filter-email></filter-email>
-        <book-list :mails="mails"></book-list>
+        <email-list :mails="mails"></email-list>
         </section>
     `,
     data() {

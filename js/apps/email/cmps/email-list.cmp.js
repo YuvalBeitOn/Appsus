@@ -3,11 +3,11 @@ export default {
     name: 'email-list',
     props: ['mails'],
     template: `
-    <section>
+    <section class="email-list flex column">
         <h1>I am your email List component</h1>
         <ul>
         <li v-for="currMail in mails" :key="currMail.id" >
-           <email-preview :mail="currMail" @click.native="mailClicked(currMail.id)" />
+           <email-preview :mail="currMail" />
         </li>
     </ul>
     </section>`,
@@ -15,7 +15,12 @@ export default {
         return {
         }
     },
-    components:{
+    methods: {
+        mailClicked(mailId) {
+            // console.log(mailId)
+        }
+    },
+    components: {
         emailPreview,
     },
 

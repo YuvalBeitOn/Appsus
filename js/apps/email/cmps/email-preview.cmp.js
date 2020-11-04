@@ -2,7 +2,7 @@ import { emailService } from '../../email/service/email-service.js';
 export default {
     props: ['mail'],
     template: `
-        <section class="email-preview flex">
+        <section class="email-preview flex space-between">
             <section v-if="isSelected" class="email-buttons">
             <button @click="onRemoveMail()"><i class="fas fa-trash"></i>
             </button>

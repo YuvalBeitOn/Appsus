@@ -6,6 +6,7 @@ export const emailService = {
     removeMail,
     getMailById,
     saveMailToSentInbox,
+    toggleMailStar
 };  
 
 function getMails(){
@@ -16,6 +17,11 @@ function saveMailToSentInbox(mail){
     mail.id = utilService.makeId()
     sentMsgs.unshift(mail)
     return Promise.resolve()
+}
+
+function toggleMailStar(mailid){
+    getMailById(mailid)
+    .then(mail => mail.isStar =(!mail.isStar))
 }
 
 function getMailById(id){

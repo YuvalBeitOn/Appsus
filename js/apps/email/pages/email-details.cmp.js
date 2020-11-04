@@ -1,4 +1,4 @@
-import {emailService} from '../service/email-service.js'
+import { emailService } from '../service/email-service.js'
 export default {
   name: "datilss",
   template: `
@@ -25,14 +25,14 @@ export default {
       const id = this.$route.params.mailId;
       emailService.getMailById(id).then(mail => (this.mail = mail));
     },
-    removeMail(id){
-        emailService.removeMail(id).then(()=>this.$router.go(-1))
+    removeMail(id) {
+      emailService.removeMail(id).then(() => this.$router.go(-1))
     }
   },
-  computed:{
-    mailAdress(){
-        const mail = this.mail.senderMail.toLowerCase()
-        return  `<${mail}>`
+  computed: {
+    mailAdress() {
+      const mail = this.mail.senderMail.toLowerCase()
+      return `<${mail}>`
     }
   },
   created() {

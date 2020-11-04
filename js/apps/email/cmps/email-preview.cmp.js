@@ -5,11 +5,11 @@ export default {
         <router-link :to="'/email/inbox/'+mail.id">  
         <section class="email-preview flex space-between">
             <section v-if="isSelected" class="email-buttons">
-            <button @click="onRemoveMail()"><i class="fas fa-trash"></i>
+            <button @click.prevent.stop="onRemoveMail()"><i class="fas fa-trash"></i>
             </button>
             </section>
-            <input type="checkbox" v-model="isSelected"/>
-            <i @click="onStarClicked" class="fas fa-star"></i>
+            <input @click.stop type="checkbox" v-model="isSelected"/>
+            <i @click.prevent.stop="onStarClicked" class="fas fa-star" :class="starClass"></i>
             <!-- <label for="star-checkbox">{{starMarker}}</label>
             <input v-show="false" id="star-checkbox" type="checkbox" v-model="isStarred"/> -->
            <div class="email-sender">{{mail.sender}}</div>
@@ -27,12 +27,16 @@ export default {
     },
     methods: {
         onRemoveMail() {
-            emailService.removeMail(this.mail.id)
+            emailService.removeMail(this.mail.id);
         },
-        onStarClicked(){
-            console.log(this.mail.id)
+        onStarClicked() {
+            emailService.toggleMailStar(this.mail.id);
         }
     },
     computed: {
+        starClass(){
+            return {starred: (this.mail.isStar)}
+        }
+
     }
 }

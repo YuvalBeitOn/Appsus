@@ -1,8 +1,21 @@
 @import "/css/helpers.css";
+@font-face {
+   /* FontFace */
+   font-family: sans-normal;
+   src: url(../assets/design/fonts/ProductSans-Light.ttf)
+}
 /* Basics */
 * {
     box-sizing: border-box;
   }
+  html{
+      font-size: 16px;
+      font-family: sans-normal;
+      font-weight: 300;
+    color:rgb(57, 56, 56);
+
+
+ }
 button{
     cursor: pointer;
 }
@@ -10,6 +23,7 @@ a{
     text-decoration: none;
     color:rgb(57, 56, 56);
     transition-duration: 0.3s;
+    font-weight: 400;
 }
 a:hover{
     color:rgb(33, 31, 31);

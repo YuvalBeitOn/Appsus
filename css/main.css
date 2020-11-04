@@ -3,10 +3,8 @@
 @import "/css/cmps-global/app-footer.css";
 @import "/css/cmps-global/app-header.css";
 @import "/css/cmps-global/user-msg.css";
+/* Email app */
 @import "/css/apps/email/email-main.css";
-/*  keep */
-
-@import "./keep/keep.css";
-@import "./keep/add-note.css";
-@import "./keep/note-list.css";
+/*  keep app*/
+@import "/css/apps/keep/keep-main.css";
 

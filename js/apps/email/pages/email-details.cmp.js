@@ -1,6 +1,6 @@
 import { emailService } from '../service/email-service.js'
 export default {
-  name: "details",
+  name: "details-email",
   template: `
     <section v-if="mail" class="mail-details flex column wrap align-center ">
     <div class="flex row mt-5">

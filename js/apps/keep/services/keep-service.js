@@ -1,13 +1,26 @@
 import { utilService } from '../../../services/util.service.js'
 
 var notes = [{
-    type: "NoteText",
-    isPinned: true,
-    info: { txt: "Fullstack Me Baby!" }
-}]
+        "type": "textNote",
+        "isPinned": false,
+        "info": {
+            "txt": "Fullstack Me Baby!"
+        },
+        "id": "uh5IX"
+    },
+    {
+        "type": "imgNote",
+        "isPinned": true,
+        "info": {
+            "txt": "Fullstack Me Baby!"
+        },
+        "id": "uh5IX"
+    }
+]
 
 export default {
-    addNote
+    addNote,
+    getNotes
 }
 
 function addNote(note) {

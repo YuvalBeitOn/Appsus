@@ -22,7 +22,6 @@ export default {
     },
     filterByName(name) {
       if (!name) return;
-      console.log("im in");
       return this.mails.filter(
         (mail) =>
           mail.body.toLowerCase().includes(name.toLowerCase()) ||
@@ -41,11 +40,11 @@ export default {
       }
       if (byStatus === "read") {
         if (byName) return this.filterByName(byName);
-        else return this.mails.filter((mail) => mail.isRead === true);
+        else return this.mails.filter((mail) => mail.isRead);
       }
       if (byStatus === "unread") {
         if (byName) return this.filterByName(byName);
-        else return this.mails.filter((mail) => mail.isRead === false);
+        else return this.mails.filter((mail) => !mail.isRead);
       }
     },
   },

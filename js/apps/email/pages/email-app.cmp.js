@@ -1,5 +1,5 @@
 import { emailService } from '../../email/service/email-service.js'
-import bookList from '../../email/cmps/book-list.cmp.js'
+import emailList from '../../email/cmps/email-list.cmp.js'
 import filterEmail from '../cmps/email-filter.cmp.js'
 export default {
     template: `
@@ -23,7 +23,7 @@ export default {
     },
     components: {
         emailService,
-        bookList,
+        emailList,
         filterEmail
     }
 }

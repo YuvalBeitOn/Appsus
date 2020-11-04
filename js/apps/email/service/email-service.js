@@ -12,7 +12,6 @@ function getMails(){
     return Promise.resolve(gMails)
 }
 
-
 function saveMailToSentInbox(mail){
     mail.id = utilService.makeId()
     sentMsgs.unshift(mail)
@@ -42,13 +41,16 @@ function _createMails(){
     return gMails;
 }
 
-function createMail(name,subject,body,isRead=false){
+function createMail(sender,subject,body,isRead=false){
 return {
     id:utilService.makeId(),
-    name,
+    sender,
     subject,
     body,
     isRead,
+    isSent:false,
+    isStar:false,
+    isDraft:false,
     sentAt:Date.now()
 }
 }

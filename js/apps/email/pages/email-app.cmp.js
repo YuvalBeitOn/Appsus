@@ -22,7 +22,6 @@ export default {
     },
     filterByName(name) {
       if (!name) return;
-      console.log("im in");
       return this.mails.filter(
         (mail) =>
           mail.body.toLowerCase().includes(name.toLowerCase()) ||

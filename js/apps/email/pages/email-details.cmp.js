@@ -1,10 +1,10 @@
 import { emailService } from '../service/email-service.js'
 export default {
-  name: "datilss",
+  name: "details",
   template: `
-    <section v-if="mail" class="mail-details flex column wrap align-center">
-    <div class="flex row space-between mt-5">
-    <i @click="$router.go(-1)" class="fas fa-arrow-left"></i>
+    <section v-if="mail" class="mail-details flex column wrap align-center ">
+    <div class="flex row mt-5">
+    <i @click="$router.go(-1)" class="fas fa-arrow-left mr-5"></i>
     <i @click="$router.go(-1)" class="fas fa-envelope mr-5"></i>
     <i @click="removeMail(mail.id)" class="fas fa-trash-alt mr-5"></i>
     </div>

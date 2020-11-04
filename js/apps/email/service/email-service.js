@@ -41,10 +41,10 @@ function _createMails(){
     return gMails;
 }
 
-function createMail(name,subject,body,isRead=false){
+function createMail(sender,subject,body,isRead=false){
 return {
     id:utilService.makeId(),
-    name,
+    sender,
     subject,
     body,
     isRead,

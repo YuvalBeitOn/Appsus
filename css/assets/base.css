@@ -1,9 +1,7 @@
-@import "/css/helpers.css";
-@import './cmps-global/import-css-gb.css';
 @font-face {
     /* FontFace */
     font-family: sans-normal;
-    src: url(../assets/design/fonts/ProductSans-Light.ttf)
+    src: url(../assets/fonts/ProductSans-Light.ttf)
 }
 
 

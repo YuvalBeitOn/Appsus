@@ -10,7 +10,6 @@ export default {
   <option value="unread">Unread</option>
 </select>
 </form>
-{{filterBy}}
     </section>
     `,
   data() {

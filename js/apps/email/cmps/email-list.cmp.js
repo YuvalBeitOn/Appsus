@@ -1,4 +1,4 @@
-
+import emailPreview from './email-preview.cmp.js'
 export default {
     name: 'email-list',
     props: ['mails'],
@@ -14,5 +14,9 @@ export default {
     data() {
         return {
         }
-    }
+    },
+    components:{
+        emailPreview,
+    },
+
 }

@@ -4,8 +4,7 @@ import filterEmail from "../cmps/email-filter.cmp.js";
 export default {
   name: "email-app",
   template: `
-        <section class="email-app">
-        <h1>I am your Email APP </h1>
+        <section class="email-app mt-5">
         <filter-email @filtered="setFilter"></filter-email>
         <email-list :mails="emailsToshow"></email-list>
         </section>

@@ -18,6 +18,16 @@ html {
     color: rgb(57, 56, 56);
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh
+}
+
+.main-content {
+    height: 100%;
+}
+
 button {
     cursor: pointer;
 }

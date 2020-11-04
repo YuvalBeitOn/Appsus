@@ -1,5 +1,5 @@
 export default {
-    name: 'header',
+    name: 'app-header',
     template: `
     <header class="app-header">
         <div class="logo-container">

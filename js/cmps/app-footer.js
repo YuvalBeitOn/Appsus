@@ -1,5 +1,5 @@
 export default {
-    name: 'footer',
+    name: 'app-footer',
     template: `
     <footer class="app-footer">
    <div class="container flex column align-center">

@@ -3,7 +3,7 @@ export default {
     props: ['mail'],
     template: `
         <router-link :to="'/email/inbox/'+mail.id">  
-        <section class="email-preview flex space-between">
+        <section class="email-preview flex space-between" :class="sectionState">
             <section v-if="isSelected" class="email-buttons">
             <button @click.prevent.stop="onRemoveMail()"><i class="fas fa-trash"></i>
             </button>
@@ -12,8 +12,8 @@ export default {
             <i @click.prevent.stop="onStarClicked" class="fas fa-star" :class="starClass"></i>
             <!-- <label for="star-checkbox">{{starMarker}}</label>
             <input v-show="false" id="star-checkbox" type="checkbox" v-model="isStarred"/> -->
-           <div class="email-sender">{{mail.sender}}</div>
-           <div class="email-subject">{{mail.subject}}</div>
+           <div class="email-sender" :class="readState">{{mail.sender}}</div>
+           <div class="email-subject" :class="readState">{{mail.subject}}</div>
            <div class="email-body">{{mail.body}}</div>
            <div class="email-date">{{mail.sentAt}}</div>
         </section>
@@ -31,11 +31,17 @@ export default {
         },
         onStarClicked() {
             emailService.toggleMailStar(this.mail.id);
-        }
+        },
     },
     computed: {
-        starClass(){
-            return {starred: (this.mail.isStar)}
+        starClass() {
+            return { starred: (this.mail.isStar) }
+        },
+        readState() {
+            return { unreadedmail: (!this.mail.isRead) }
+        },
+        sectionState(){
+            return {sectionreaded: (this.mail.isRead)}
         }
 
     }

@@ -16,9 +16,9 @@ export default {
         }
     },
     methods: {
-        mailClicked(mailId) {
-            // console.log(mailId)
-        }
+        // mailClicked(mailId) {
+        //     console.log(mailId)
+        // }
     },
     components: {
         emailPreview,

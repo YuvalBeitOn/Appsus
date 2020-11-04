@@ -1,6 +1,6 @@
 import { emailService } from '../service/email-service.js'
 export default {
-  name: "details",
+  name: "email-details",
   template: `
     <section v-if="mail" class="mail-details flex column wrap align-center ">
     <div class="flex row mt-5">
@@ -23,7 +23,11 @@ export default {
   methods: {
     loadMail() {
       const id = this.$route.params.mailId;
-      emailService.getMailById(id).then(mail => (this.mail = mail));
+      emailService.getMailById(id).then(mail => {
+        this.mail = mail;
+        this.mail.isRead = true;
+        console.log(this.mail)
+      });
     },
     removeMail(id) {
       emailService.removeMail(id).then(() => this.$router.go(-1))

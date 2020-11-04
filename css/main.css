@@ -2,3 +2,9 @@
 @import "./assets/helpers.css";
 @import "/css/cmps-global/app-footer.css";
 @import "/css/cmps-global/user-msg.css";
+
+/*  keep */
+
+@import "./keep/keep.css";
+@import "./keep/add-note.css";
+@import "./keep/note-list.css";

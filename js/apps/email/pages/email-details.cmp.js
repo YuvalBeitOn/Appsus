@@ -4,9 +4,9 @@ export default {
   template: `
     <section v-if="mail" class="mail-details flex column wrap align-center">
     <div class="flex row space-between mt-5">
-    <i class="fas fa-arrow-left"></i>
-    <i class="fas fa-envelope mr-5"></i>
-    <i class="fas fa-trash-alt mr-5"></i>
+    <i @click="$router.go(-1)" class="fas fa-arrow-left"></i>
+    <i @click="$router.go(-1)" class="fas fa-envelope mr-5"></i>
+    <i @click="removeMail(mail.id)" class="fas fa-trash-alt mr-5"></i>
     </div>
     <div class="massage mt-5">
     <h3>{{mail.subject}}</h3>
@@ -25,6 +25,9 @@ export default {
       const id = this.$route.params.mailId;
       emailService.getMailById(id).then(mail => (this.mail = mail));
     },
+    removeMail(id){
+        emailService.removeMail(id).then(()=>this.$router.go(-1))
+    }
   },
   computed:{
     mailAdress(){

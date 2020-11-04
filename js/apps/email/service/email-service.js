@@ -36,7 +36,7 @@ function _createMails(){
     gMails.push(createMail('Guy','Sprint 3 is On!',utilService.makeLorem(15)))
     gMails.push(createMail('Moshe','Yaron Biton Show',utilService.makeLorem(15)))
     gMails.push(createMail('Manham','New day',utilService.makeLorem(20)))
-    gMails.push(createMail('Bob Habani','I Have Work for you',utilService.makeLorem(5)))
+    gMails.push(createMail('Bob Habani','I Have Work for you',utilService.makeLorem(5),true))
     gMails.push(createMail('Gantz','Wassap? ',utilService.makeLorem(10)))
     return gMails;
 }

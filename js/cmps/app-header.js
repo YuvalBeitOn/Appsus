@@ -7,9 +7,9 @@ export default {
         </div>
         <nav class="main-nav flex">
             <router-link to="/">Home</router-link>
-            <router-link to="/books">Books</router-link>
             <router-link to="/email">Email</router-link>
-            <router-link to="/notes">Notes</router-link>
+            <router-link to="/keep">Keep</router-link>
+            <router-link to="/books">Books</router-link>
         </nav>
     </header>
       `

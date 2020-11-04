@@ -1,5 +1,6 @@
 import { emailService } from '../../email/service/email-service.js';
 import longText from '../../../cmps/long-text.cmp.js';
+import {eventBus} from '../../../services/event-bus-service.js'
 export default {
     props: ['mail'],
     template: `
@@ -26,7 +27,7 @@ export default {
     },
     methods: {
         onRemoveMail() {
-            emailService.removeMail(this.mail.id);
+            emailService.removeMail(this.mail.id).then(()=>eventBus.$emit("show-msg", {txt: 'Your Message moved to trash!', type:'alert-success'}));
         },
         onStarClicked() {
             emailService.toggleMailStar(this.mail.id);

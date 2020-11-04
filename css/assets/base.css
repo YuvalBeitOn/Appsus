@@ -28,6 +28,10 @@ body {
 
 button {
     cursor: pointer;
+    border: none;
+}
+button:focus{
+    outline: none;
 }
 
 a {

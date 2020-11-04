@@ -20,8 +20,10 @@ function saveMailToSentInbox(mail){
 }
 
 function toggleMailStar(mailid){
+    return Promise.resolve(
     getMailById(mailid)
-    .then(mail => mail.isStar =(!mail.isStar))
+    .then(mail => mail.isStar =(!mail.isStar)))
+    
 }
 
 function getMailById(id){

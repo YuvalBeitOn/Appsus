@@ -3,7 +3,7 @@ export default {
   template: `
     <section class="email-filter">
     <form @submit.prevent="emitFilter" class="email-controls container flex justify-center wrap">
-    <input type="text" id="search" class="search-mail" v-model="filterBy.byName" @input="emitFilter" placeholder="Search mail">
+    <input type="text" id="search" class="search-mail" v-model.trim="filterBy.byName" @input="emitFilter" placeholder="Search mail">
     <select class="sort-msg" v-model="filterBy.byStatus" @change="emitFilter">
    <option value="all">All</option>
    <option value="read">Read</option>

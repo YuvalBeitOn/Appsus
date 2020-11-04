@@ -7,8 +7,7 @@ export default {
         <router-link :to="'/email/inbox/'+mail.id">  
         <section class="email-preview flex" :class="sectionState">
             <section v-if="isSelected" class="email-buttons">
-            <button @click.prevent.stop="onRemoveMail()"><i class="fas fa-trash"></i>
-            </button>
+            <i @click.prevent.stop="onRemoveMail()" class="fas fa-trash ml-5"></i>
             </section>
             <input @click.stop type="checkbox" v-model="isSelected"/>
             <i @click.prevent.stop="onStarClicked" class="fas fa-star mr-5 ml-5 " :class="starClass"></i>
@@ -27,10 +26,10 @@ export default {
     },
     methods: {
         onRemoveMail() {
-            emailService.removeMail(this.mail.id).then(()=>eventBus.$emit("show-msg", {txt: 'Your Message moved to trash!', type:'alert-success'}));
+            emailService.removeMail(this.mail.id).then(()=>eventBus.$emit("show-msg", {txt: 'Your Message moved to trash!', type:'alert-danger'}));
         },
         onStarClicked() {
-            emailService.toggleMailStar(this.mail.id);
+            emailService.toggleMailStar(this.mail.id).then(()=>eventBus.$emit("show-msg", {txt: 'Your Message add to starred messages!', type:'alert-success'}));
         },
     },
     computed: {

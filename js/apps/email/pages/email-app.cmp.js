@@ -13,6 +13,7 @@ export default {
     return {
       mails: null,
       filterBy: null,
+      mailsCategory: this.$route.params.mailsCategory
     };
   },
   methods: {
@@ -48,9 +49,10 @@ export default {
     },
   },
   created() {
-    emailService.getMails().then((mails) => {
+    emailService.getMails(this.mailsCategory).then((mails) => {
       this.mails = mails;
-    });
+    })
+    // console.log()
   },
   components: {
     emailService,

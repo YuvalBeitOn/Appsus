@@ -14,7 +14,7 @@ const myRoutes = [{
     component: homePage
 },
 {
-    path: '/email/inbox',
+    path: '/email/:mailsCategory',
     component: emailApp
 },
 {
@@ -22,33 +22,33 @@ const myRoutes = [{
     component: emailDetails
 },
 //TODO: MOVE THIS PATHS TO MAIL APP ROUTS 
-{
-    path: '/email/all',
-    component: emailAll
-},
-{
-    path: '/email/stared',
-    component: emailStar
-},
-{
-    path: '/email/stared',
-    component: emailStar
-},
-{
-    path: '/email/sent',
-    component: emailSent
-},
-{
-    path: '/email/drafts',
-    component: emailDrafts
-},
-{
-    path: '/email/remove',
-    component: emailRemove
-}, {
-    path: '/email/compose',
-    component: emailCompose
-},
+// {
+//     path: '/email/all',
+//     component: emailAll
+// },
+// {
+//     path: '/email/stared',
+//     component: emailStar
+// },
+// {
+//     path: '/email/stared',
+//     component: emailStar
+// },
+// {
+//     path: '/email/sent',
+//     component: emailSent
+// },
+// {
+//     path: '/email/drafts',
+//     component: emailDrafts
+// },
+// {
+//     path: '/email/remove',
+//     component: emailRemove
+// }, {
+//     path: '/email/compose',
+//     component: emailCompose
+// },
 // /////////////////////////////////////////////
 {
     path: '/keep',

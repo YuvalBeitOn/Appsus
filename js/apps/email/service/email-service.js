@@ -9,8 +9,22 @@ export const emailService = {
     toggleMailStar
 };  
 
-function getMails(){
-    return Promise.resolve(gMails)
+function getMails(mailsCategory){
+    console.log(mailsCategory)
+    switch(mailsCategory) {
+        case 'all':
+            return Promise.resolve(gMails)
+        case 'drafts':
+            return Promise.resolve(gMails.filter(mail=> mail.isDraft))
+        case 'stared':
+            return Promise.resolve(gMails.filter(mail=> mail.isStar))
+        case 'sent':
+            return Promise.resolve(gMails.filter(mail=> mail.isSent))
+        case 'trash':
+            return Promise.resolve(gMails.filter(mail=> mail.isRemove))
+        case 'inbox':
+            return Promise.resolve(gMails.filter(mail=> !mail.isRemove && !mail.isDraft))
+      }
 }
 
 function sendMail(mail){

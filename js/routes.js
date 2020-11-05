@@ -8,6 +8,7 @@ import emailStar from './apps/email/pages/email-star.cmp.js'
 import emailSent from './apps/email/pages/email-sent.cmp.js'
 import emailRemove from './apps/email/pages/email-remove.cmp.js'
 import emailDrafts from './apps/email/pages/email-drafts.cmp.js'
+import emailCompose from './apps/email/cmps/email-compose.cmp.js'
 const myRoutes = [{
     path: '/',
     component: homePage
@@ -16,36 +17,39 @@ const myRoutes = [{
     path: '/email/inbox',
     component: emailApp
 },
-    {
-        path: '/email/inbox/:mailId',
-        component: emailDetails
-    },
-    //TODO: MOVE THIS PATHS TO MAIL APP ROUTS 
-    {
-        path: '/email/all',
-        component: emailAll
-    },
-    {
-        path: '/email/stared',
-        component: emailStar
-    },
-    {
-        path: '/email/stared',
-        component: emailStar
-    },
-    {
-        path: '/email/sent',
-        component: emailSent
-    },
-    {
-        path: '/email/drafts',
-        component: emailDrafts
-    },
-    {
-        path: '/email/remove',
-        component: emailRemove
-    },
-    // /////////////////////////////////////////////
+{
+    path: '/email/inbox/:mailId',
+    component: emailDetails
+},
+//TODO: MOVE THIS PATHS TO MAIL APP ROUTS 
+{
+    path: '/email/all',
+    component: emailAll
+},
+{
+    path: '/email/stared',
+    component: emailStar
+},
+{
+    path: '/email/stared',
+    component: emailStar
+},
+{
+    path: '/email/sent',
+    component: emailSent
+},
+{
+    path: '/email/drafts',
+    component: emailDrafts
+},
+{
+    path: '/email/remove',
+    component: emailRemove
+}, {
+    path: '/email/compose',
+    component: emailCompose
+},
+// /////////////////////////////////////////////
 {
     path: '/keep',
     component: keepApp

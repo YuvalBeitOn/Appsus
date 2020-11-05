@@ -14,7 +14,7 @@ export default {
            <div class="email-sender" :class="readState">{{mail.sender}}</div>
            <div class="email-subject" :class="readState">{{mail.subject}} - </div>
            <div class="email-body"><long-text :txt="mail.body"></long-text></div>
-           <div class="email-date align-self-end" :class="readState">{{mail.sentAt}}</div>
+           <div class="email-date align-self-end" :class="readState">{{dateToshow}}</div>
         </section>
         </router-link>
     `,
@@ -41,7 +41,11 @@ export default {
         },
         sectionState(){
             return {'section-readed': (this.mail.isRead),'section-marked':this.isSelected}
+        },
+        dateToshow(){
+            return new Date(this.mail.sendAt)
         }
+
 
     },
     components:{

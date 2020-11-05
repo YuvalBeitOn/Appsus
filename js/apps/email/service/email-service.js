@@ -65,6 +65,6 @@ return {
     isSent:false,
     isStar:false,
     isDraft:false,
-    sentAt:Date.now()
+    sentAt: Date.now()
 }
 }

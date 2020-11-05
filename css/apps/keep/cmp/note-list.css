@@ -38,3 +38,8 @@
      bottom: 0;
      padding: 0.5rem;
  }
+ 
+ .txt {
+     font-weight: bold;
+     margin-top: 0.5rem;
+ }

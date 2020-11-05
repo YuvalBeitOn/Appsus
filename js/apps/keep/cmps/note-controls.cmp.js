@@ -1,5 +1,7 @@
 import keepService from '../services/keep-service.js'
 import colorsMenu from './colors-menu.cmp.js'
+import { eventBus } from '../../../services/event-bus-service.js'
+
 
 export default {
     name: 'note-control',
@@ -23,7 +25,9 @@ export default {
     },
     methods: {
         deleteNote() {
-            keepService.deleteNote(this.noteId);
+            console.log(this.note.id);
+            keepService.deleteNote(this.note.id);
+            eventBus.$emit("show-msg", { txt: 'Your note is deleted!', type: 'alert-danger' })
         },
         togglePinned() {
             keepService.updateNoteProp(this.note.id, 'isPinned', !this.note.isPinned);

@@ -1,0 +1,17 @@
+.colors-container {
+    position: relative;
+}
+
+.colors-container .color {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid white;
+    transition: all .3s;
+    margin-inline-start: 2px;
+}
+
+.colors-container .color:hover {
+    transform: scale(1.1);
+}

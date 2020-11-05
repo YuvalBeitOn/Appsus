@@ -21,7 +21,8 @@ export default {
     methods: {
         addNote(currNote) {
             console.log(currNote);
-            keepService.addNote(currNote);
+            keepService.addNote(currNote)
+                .then(() => eventBus.$emit("show-msg", { txt: 'Your Note is added!', type: 'alert-success' }));
         },
         editNote(ev) {
             const todoIdx = ev.target.attributes.idxintodos.value;

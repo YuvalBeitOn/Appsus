@@ -4,7 +4,7 @@ export default {
     template: ` 
     <li class="note todo-note">
         <div class="note-container">
-            <ul class="todo-list">
+            <ul class="todo-list clean-list">
                 <li :class="{'todo':true, 'done': todo.isDone}" v-for="(todo,idx) in note.info.todos" :idxInTodos="idx" @blur="editNote" :id="note.id" contenteditable  :key="todo.id">
                     {{todo.txt}}
                     <input type="checkbox" v-model="todo.isDone">

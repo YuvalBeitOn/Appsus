@@ -50,7 +50,7 @@ function createNotes() {
             "id": utilService.makeId(),
             "isPinned": false,
             "info": {
-                "txt": 'This is a image',
+                "txt": 'Vue',
                 "url": 'https://www.youtube.com/watch?v=nhBVL41-_Cw',
 
             },
@@ -61,8 +61,8 @@ function createNotes() {
             "id": utilService.makeId(),
             "isPinned": true,
             "info": {
-                "txt": 'This is a video',
-                "url": 'https://www.youtube.com/watch?v=0MxulhivCvI',
+                "txt": 'Statis&Benel',
+                "url": 'https://www.youtube.com/watch?v=-2EZbz22iNg&ab_channel=StaticandBenEl-%D7%A1%D7%98%D7%98%D7%99%D7%A7%D7%95%D7%91%D7%9F%D7%90%D7%9C',
 
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
@@ -91,7 +91,7 @@ function createNotes() {
             id: utilService.makeId(),
             "isPinned": true,
             "info": {
-                "txt": 'This is a video',
+                "txt": 'Babys',
                 "url": 'https://www.youtube.com/watch?v=HpUT7OCbcJU',
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
@@ -101,8 +101,8 @@ function createNotes() {
             "id": utilService.makeId(),
             "isPinned": true,
             "info": {
-                "txt": '',
-                "url": 'https://www.youtube.com/watch?v=GNjStWG2vLU',
+                "txt": 'Great song',
+                "url": 'https://www.youtube.com/watch?v=iaGjz4dtr3o&list=RDiaGjz4dtr3o&start_radio=1&ab_channel=BakermatVEVO',
 
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',

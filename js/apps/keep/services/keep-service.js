@@ -11,7 +11,9 @@ export default {
     updateNoteProp,
     cloneNote,
     createNotes,
-    editNote
+    editNote,
+    sendNote,
+    getNoteTypeById
 }
 
 function createNotes() {
@@ -23,6 +25,7 @@ function createNotes() {
             "isPinned": false,
             "info": { "txt": "Fullstack Me Baby!" },
             "bgc": 'rgba(219, 186, 188, 0.8)',
+            "onEdit": false
         },
         {
             "type": "imgNote",
@@ -32,7 +35,8 @@ function createNotes() {
                 "txt": 'Take a trip around the world...',
                 "url": "https://pix10.agoda.net/hotelImages/1199068/-1/09cb9a2780bf41ad1e8f8a3d2e074754.jpg?s=1024x768"
             },
-            "bgc": 'rgba(219, 186, 188, 0.8)'
+            "bgc": 'rgba(219, 186, 188, 0.8)',
+            "onEdit": false
         },
         {
             "type": "todoNote",
@@ -43,7 +47,8 @@ function createNotes() {
                     { txt: 'Go to sleep', isDone: false }
                 ]
             },
-            "bgc": 'rgba(219, 186, 188, 0.8)'
+            "bgc": 'rgba(219, 186, 188, 0.8)',
+            "onEdit": false
         },
         {
             "type": 'videoNote',
@@ -55,17 +60,19 @@ function createNotes() {
 
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
+            "onEdit": false
         },
         {
             "type": 'videoNote',
             "id": utilService.makeId(),
             "isPinned": true,
             "info": {
-                "txt": 'Statis&Benel',
+                "txt": 'Static&Benel',
                 "url": 'https://www.youtube.com/watch?v=-2EZbz22iNg&ab_channel=StaticandBenEl-%D7%A1%D7%98%D7%98%D7%99%D7%A7%D7%95%D7%91%D7%9F%D7%90%D7%9C',
 
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
+            "onEdit": false
         },
         {
             "type": 'todoNote',
@@ -78,6 +85,7 @@ function createNotes() {
                 ]
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
+            "onEdit": false
         },
         {
             "type": 'textNote',
@@ -85,6 +93,7 @@ function createNotes() {
             "isPinned": true,
             "info": { "txt": "Make this app amazing!" },
             "bgc": 'rgba(219, 186, 188, 0.8)',
+            "onEdit": false
         },
         {
             "type": 'videoNote',
@@ -95,6 +104,7 @@ function createNotes() {
                 "url": 'https://www.youtube.com/watch?v=HpUT7OCbcJU',
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
+            "onEdit": false
         },
         {
             "type": 'videoNote',
@@ -106,6 +116,7 @@ function createNotes() {
 
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
+            "onEdit": false
         },
         {
             "type": 'todoNote',
@@ -118,6 +129,7 @@ function createNotes() {
                 ]
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
+            "onEdit": false
         },
         {
             "type": 'todoNote',
@@ -130,6 +142,7 @@ function createNotes() {
                 ]
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
+            "onEdit": false
         },
         {
             "type": 'textNote',
@@ -139,14 +152,41 @@ function createNotes() {
                 txt: `It will be worth it in the end...`
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
+            "onEdit": false
+        },
+        {
+            "type": 'textNote',
+            "id": utilService.makeId(),
+            "isPinned": true,
+            "info": {
+                txt: `here are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. `
+            },
+            "bgc": 'rgba(219, 186, 188, 0.8)',
+            "onEdit": false
         },
     ]
     utilService.storeToStorage(STORAGE_KEY, notes);
     return notes;
 }
 
+function getNoteTypeById(noteId) {
+    const note = notes.find(note => note.id === noteId);
+    return note.type;
+}
+
+function sendNote(note) {
+    let messegeContent;
+    if (note.type === "textNote") messegeContent = note.info.txt;
+    else if (note.type === "todoNote") {
+        messegeContent = note.info.todos.map((todo, idx) => {
+            return `${idx}. ${todo.txt}\n`
+        }).join(',');
+    } else messegeContent = `${note.info.txt}: \n ${note.info.url}`;
+    console.log('messegeContent:', messegeContent);
+    // this.$router.push(`/email/compose/new?type=${this.note.type}&body=${messegeContent}&title=${'title'}`);
+}
+
 function editNote(noteId, newVal, idx) {
-    console.log(noteId, newVal);
     const note = notes.find(note => note.id === noteId);
     if (note.type !== 'todoNote') note.info.txt = newVal;
     else {
@@ -162,7 +202,6 @@ function updateNoteProp(noteId, prop, value) {
     const noteToEdit = notes.find(note => {
         return note.id === noteId;
     });
-    console.log(noteToEdit);
     noteToEdit[prop] = value;
     utilService.storeToStorage(STORAGE_KEY, notes);
 }
@@ -180,17 +219,13 @@ function cloneNote(note) {
 }
 
 function deleteNote(noteId) {
-    console.log(noteId);
     const idx = notes.findIndex(note => {
         return note.id === noteId
     });
-    console.log('idx:', idx);
-    console.log(notes.splice(idx, 1));
     utilService.storeToStorage(STORAGE_KEY, notes)
 }
 
 function addNote(note) {
-    console.log('add note in service:', note);
     if (note.type === 'todoNote') {
         const todos = note.info.txt.split(',');
         note.info.todos = todos.map(todo => {
@@ -198,7 +233,8 @@ function addNote(note) {
         });
     }
     note.id = utilService.makeId();
-    note.bgc = 'lightblue'
+    note.bgc = 'lightblue';
+    note.onEdit = false;
     notes.push(note);
     utilService.storeToStorage(STORAGE_KEY, notes);
     return Promise.resolve(note);

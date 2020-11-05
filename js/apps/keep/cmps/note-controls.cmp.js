@@ -13,14 +13,13 @@ export default {
         <button @click="togglePinned"> <i class="fas fa-thumbtack"></i></button> 
         <button @click="toggleColorsMenu"><i class="fas fa-palette"></i></button> 
         <button @click="copyNote"> <i class="fas fa-clone"></i></button> 
-        <!-- <button @click="toggleEdit"> <i class="fas fa-edit"></i></button>   -->
-        <!-- <button @click="sendToMail"><i class="fas fa-paper-plane"></i></button>  -->
+        <!-- <button @click="onEdit"> <i class="fas fa-edit"></i></button>   -->
+        <button @click="sendToMail"><i class="fas fa-at"></i></button> 
     </section>
     `,
     data() {
         return {
-            showColorsMenu: false,
-            editMode: false
+            showColorsMenu: false
         }
     },
     methods: {
@@ -31,6 +30,8 @@ export default {
         },
         togglePinned() {
             keepService.updateNoteProp(this.note.id, 'isPinned', !this.note.isPinned);
+            if (this.note.isPinned) eventBus.$emit("show-msg", { txt: 'Note pined!', type: 'alert-success' });
+            else eventBus.$emit("show-msg", { txt: 'Note unPined', type: 'alert-danger' });
         },
         toggleColorsMenu() {
             return this.showColorsMenu = !this.showColorsMenu;
@@ -40,10 +41,15 @@ export default {
         },
         copyNote() {
             keepService.cloneNote(this.note);
+            eventBus.$emit("show-msg", { txt: 'Note copied!', type: 'alert-success' });
         },
-        // toggleEdit() {
-        //     this.editMode = !this.editMode;
+        // onEdit() {
+        //     this.note.onEdit = true;
+        //     console.log(this.note);
         // }
+        sendToMail() {
+            keepService.sendNote(this.note);
+        },
     },
     components: {
         colorsMenu

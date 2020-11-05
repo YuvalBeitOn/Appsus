@@ -1,5 +1,7 @@
 import { emailService } from '../service/email-service.js'
 import {eventBus} from '../../../services/event-bus-service.js'
+// import emailNav from '../cmps/email-nav.cmp.js'
+
 
 export default {
   name: "email-details",
@@ -48,4 +50,7 @@ export default {
   created() {
     this.loadMail();
   },
+  components:{
+    // emailNav
+  }
 };

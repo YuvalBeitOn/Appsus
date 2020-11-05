@@ -70,7 +70,7 @@ function _createMails(){
     return gMails;
 }
 
-function createMail(sender,senderMail,subject,body,isDraft=false){
+function createMail(sender,senderMail,subject,body,isStarred=false){
 return {
     id:utilService.makeId(),
     sender,
@@ -79,8 +79,8 @@ return {
     body,
     isRead:false,
     isSent:false,
-    isStarred:false,
-    isDraft,
+    isStarred,
+    isDraft:false,
     isRemoved:false,
     sentAt:Date.now()
 }

@@ -4,7 +4,7 @@ import { eventBus } from '../../../services/event-bus-service.js'
 export default {
     props: ['mail'],
     template: `
-        <router-link :to="'/email/inbox/'+mail.id">  
+        <router-link :to="'/email/'+mailsCategory+'/'+mail.id">  
         <section class="email-preview flex" :class="sectionState">
             <section v-if="isSelected" class="email-buttons">
             <i @click.prevent.stop="onRemoveMail()" class="fas fa-trash ml-5"></i>
@@ -53,9 +53,7 @@ export default {
         }
 
     },
-    created(){
-console.log(this.mailsCategory)
-    },
+
     components: {
         longText,
     }

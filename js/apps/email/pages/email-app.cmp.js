@@ -59,8 +59,14 @@ export default {
       this.mails = mails;
     })
     // console.log()
+  }, watch: {
+    '$route.params.mailsCategory'() {
+      console.log('The category changed bro')
+      emailService.getMails(this.mailsCategory).then((mails) => {
+        this.mails = mails;
+      })
+    }
   },
-  
   components: {
     emailService,
     emailList,

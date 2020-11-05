@@ -2,10 +2,15 @@ import { eventBus } from '../services/event-bus-service.js'
 
 export default {
     template: `
+<<<<<<< HEAD
         <section v-if="msg" :class="['alert',msg.type]">
+=======
+    
+        <section v-if="msg" class="flex column justify-center align-center" :class="['alert',msg.type]">
+>>>>>>> 68be31d35f3d2960c50eeb4556b0fabbd6589ffc
             <p>{{msg.txt}}</p>
             <div>
-            <button :class="msg.type" @click="msg=null">x</button>
+            <button :class="msg.type" @click="msg=null">X</button>
             </div>
 
         </section>
@@ -20,7 +25,7 @@ export default {
             this.msg = msg
             setTimeout(() => {
                 this.msg = null;
-            }, 2000)
+            }, 1000)
         })
     }
 }

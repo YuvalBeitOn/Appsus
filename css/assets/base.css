@@ -3,7 +3,12 @@
 * {
     box-sizing: border-box;
 }
-
+p{
+    margin: 0;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0.3125rem 0;
+}
 html {
     font-size: 16px;
     font-family: 'Assistant', sans-serif;
@@ -23,6 +28,10 @@ body {
 
 button {
     cursor: pointer;
+    border: none;
+}
+button:focus{
+    outline: none;
 }
 
 a {
@@ -34,4 +43,7 @@ a {
 
 a:hover {
     color: rgb(33, 31, 31);
+}
+i{
+    cursor: pointer;
 }

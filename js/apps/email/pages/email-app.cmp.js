@@ -1,19 +1,23 @@
 import { emailService } from "../../email/service/email-service.js";
 import emailList from "../../email/cmps/email-list.cmp.js";
 import filterEmail from "../cmps/email-filter.cmp.js";
+import emailNav from "../cmps/email-nav.cmp.js"
 export default {
   name: "email-app",
   template: `
-        <section class="email-app">
-        <h1>I am your Email APP </h1>
+        <section class="email-app mt-5">
         <filter-email @filtered="setFilter"></filter-email>
-        <email-list :mails="emailsToshow"></email-list>
-        </section>
+        <div class="flex">
+        <email-nav></email-nav>
+        <email-list @mailRemove="loadMailsAfterRemove" :mails="emailsToshow"></email-list>
+        </div>  
+      </section>
     `,
   data() {
     return {
       mails: null,
       filterBy: null,
+      mailsCategory: this.$route.params.mailsCategory
     };
   },
   methods: {
@@ -28,6 +32,12 @@ export default {
           mail.sender.toLowerCase().includes(name.toLowerCase()) ||
           mail.subject.toLowerCase().includes(name.toLowerCase())
       );
+    },
+    loadMailsAfterRemove(){
+      console.log('im here !');
+     const mails = this.mails;
+     const mailsAfterRemove = mails.filter(mail=> !mail.isRemoved)
+     this.mails = mailsAfterRemove;
     },
   },
   computed: {
@@ -49,14 +59,21 @@ export default {
     },
   },
   created() {
-    emailService.getMails().then((mails) => {
+    emailService.getMails(this.mailsCategory).then((mails) => {
       this.mails = mails;
-      console.log(mails);
-    });
+    })
+  }, watch: {
+    '$route.params.mailsCategory'() {
+      this.mailsCategory = this.$route.params.mailsCategory
+      emailService.getMails(this.mailsCategory).then((mails) => {
+        this.mails = mails;
+      })
+    }
   },
   components: {
     emailService,
     emailList,
     filterEmail,
+    emailNav,
   },
 };

@@ -16,14 +16,14 @@ function getMails(mailsCategory){
             return Promise.resolve(gMails)
         case 'drafts':
             return Promise.resolve(gMails.filter(mail=> mail.isDraft))
-        case 'stared':
-            return Promise.resolve(gMails.filter(mail=> mail.isStar))
+        case 'starred':
+            return Promise.resolve(gMails.filter(mail=> mail.isStarred))
         case 'sent':
             return Promise.resolve(gMails.filter(mail=> mail.isSent))
         case 'trash':
-            return Promise.resolve(gMails.filter(mail=> mail.isRemove))
+            return Promise.resolve(gMails.filter(mail=> mail.isRemoved))
         case 'inbox':
-            return Promise.resolve(gMails.filter(mail=> !mail.isRemove && !mail.isDraft))
+            return Promise.resolve(gMails.filter(mail=> !mail.isRemoved && !mail.isDraft))
       }
 }
 
@@ -36,7 +36,7 @@ function sendMail(mail){
 function toggleMailStar(mailId){
     return Promise.resolve(
     getMailById(mailId)
-    .then(mail => mail.isStar =(!mail.isStar)))
+    .then(mail => mail.isStarred =(!mail.isStarred)))
 }
 
 function getMailById(id){
@@ -46,8 +46,8 @@ function getMailById(id){
 function removeMail(id){
     const idx = gMails.findIndex(mail=> mail.id === id)
     const mail = gMails[idx]
-    if(mail.isRemove)  gMails.splice(idx,1)
-    else  gMails[idx].isRemove = true
+    if(mail.isRemoved)  gMails.splice(idx,1)
+    else  gMails[idx].isRemoved = true
     return Promise.resolve()
 }
 
@@ -79,9 +79,9 @@ return {
     body,
     isRead:false,
     isSent:false,
-    isStar:false,
+    isStarred:false,
     isDraft,
-    isRemove:false,
+    isRemoved:false,
     sentAt:Date.now()
 }
 }

@@ -36,7 +36,7 @@ export default {
     loadMailsAfterRemove(){
       console.log('im here !');
      const mails = this.mails;
-     const mailsAfterRemove = mails.filter(mail=> !mail.isRemove)
+     const mailsAfterRemove = mails.filter(mail=> !mail.isRemoved)
      this.mails = mailsAfterRemove;
     },
   },

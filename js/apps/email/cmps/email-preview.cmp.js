@@ -38,7 +38,7 @@ export default {
     },
     computed: {
         starClass() {
-            return { starred: (this.mail.isStar) }
+            return { starred: (this.mail.isStarred) }
         },
         readState() {
             return { unreadedmail: (!this.mail.isRead) }

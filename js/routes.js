@@ -12,7 +12,7 @@ const myRoutes = [{
     component: emailApp
 },
 {
-    path: '/email/inbox/:mailId',
+    path: '/email/:mailsCategory/:mailId',
     component: emailDetails
 },
 //TODO: MOVE THIS PATHS TO MAIL APP ROUTS 

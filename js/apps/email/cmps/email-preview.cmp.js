@@ -21,7 +21,8 @@ export default {
     data() {
         return {
             isSelected: false,
-            isStarred: false
+            isStarred: false,
+            mailsCategory: this.$route.params.mailsCategory
         }
     },
     methods: {
@@ -51,7 +52,9 @@ export default {
            return (this.mail.sentAt <= dayAgo)? new Date(this.mail.sentAt).toISOString().substr(0, 10) : new Date(this.mail.sentAt).toLocaleTimeString().substring(0,5)
         }
 
-
+    },
+    created(){
+console.log(this.mailsCategory)
     },
     components: {
         longText,

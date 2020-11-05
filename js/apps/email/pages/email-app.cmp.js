@@ -62,7 +62,6 @@ export default {
     emailService.getMails(this.mailsCategory).then((mails) => {
       this.mails = mails;
     })
-    // console.log()
   }, watch: {
     '$route.params.mailsCategory'() {
       this.mailsCategory = this.$route.params.mailsCategory

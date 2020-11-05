@@ -10,7 +10,7 @@ export const emailService = {
 };  
 
 function getMails(mailsCategory){
-    console.log(mailsCategory)
+    // console.log(mailsCategory)
     switch(mailsCategory) {
         case 'all':
             return Promise.resolve(gMails)

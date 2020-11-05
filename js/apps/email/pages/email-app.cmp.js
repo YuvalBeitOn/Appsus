@@ -55,7 +55,7 @@ export default {
     // console.log()
   }, watch: {
     '$route.params.mailsCategory'() {
-      console.log('The category changed bro')
+      this.mailsCategory = this.$route.params.mailsCategory
       emailService.getMails(this.mailsCategory).then((mails) => {
         this.mails = mails;
       })

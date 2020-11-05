@@ -1,3 +1,8 @@
-@import "./cmp/keep.css";
+/* * {
+    font-family: 'Assistant', sans-serif;
+} */
+
 @import "./cmp/add-note.css";
 @import "./cmp/note-list.css";
+@import "./cmp/todo-note.css";
+@import "./cmp/img-note.css";

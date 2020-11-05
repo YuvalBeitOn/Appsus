@@ -1,24 +1,18 @@
 export default {
-    props: ['note'],
+    name: 'todo-note',
+    props: ['note', 'editNote'],
     template: ` 
     <li class="note todo-note">
-        <ul class="todo-list">
-            <li @click="toggleIsDone(todo)" :class="{'todo':true, 'done': todo.isDone}" v-for="todo in note.info.todos" :key="todo.id">
-                {{todo.txt}}
-            </li>
-        </ul>
+        <div class="note-container">
+            <ul class="todo-list">
+                <li :class="{'todo':true, 'done': todo.isDone}" v-for="(todo,idx) in note.info.todos" :idxInTodos="idx" @blur="editNote" :id="note.id" contenteditable  :key="todo.id">
+                    {{todo.txt}}
+                    <input type="checkbox" v-model="todo.isDone">
+                </li>
+            </ul>
+            <slot></slot>
+            <span class="fas fa-list note-type"></span> 
+        </div>
     </li>
-    
     `,
-    methods: {
-        toggleIsDone(todo) {
-            todo.isDone = !todo.isDone;
-        }
-
-    },
-    created() {
-        console.log(this.note);
-
-
-    }
 }

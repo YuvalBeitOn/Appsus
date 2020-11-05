@@ -1,8 +1,14 @@
 export default {
-    props: ['note'],
+    name: 'text-note',
+    props: ['note', 'editNote'],
     template: `
-    <li class="note text-note">
-      <h3>{{note.info.txt}}</h3>
-</li>
-    `
+
+  <li v-if="editNote" class="note text-note">
+  <div class="note-container">
+      <h3 @blur="editNote" :id="note.id" contenteditable>{{note.info.txt}}</h3>
+      <slot></slot>
+      <span class="fas fa-font note-type"></span>
+    </div>
+    </li>
+    `,
 }

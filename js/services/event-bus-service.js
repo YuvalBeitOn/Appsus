@@ -1,3 +1,3 @@
 var bus = new Vue()
 
-export const eventBus = bus
+export const eventBus = bus;

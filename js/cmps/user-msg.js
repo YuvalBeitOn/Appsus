@@ -1,9 +1,7 @@
 import { eventBus } from '../services/event-bus-service.js'
 
-
 export default {
     template: `
-    
         <section v-if="msg" :class="['alert',msg.type]">
             <p>{{msg.txt}}</p>
             <div>

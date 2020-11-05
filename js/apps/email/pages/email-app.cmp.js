@@ -50,7 +50,6 @@ export default {
   created() {
     emailService.getMails().then((mails) => {
       this.mails = mails;
-      console.log(mails);
     });
   },
   components: {

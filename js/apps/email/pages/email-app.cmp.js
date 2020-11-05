@@ -1,13 +1,17 @@
 import { emailService } from "../../email/service/email-service.js";
 import emailList from "../../email/cmps/email-list.cmp.js";
 import filterEmail from "../cmps/email-filter.cmp.js";
+import emailNav from "../cmps/email-nav.cmp.js"
 export default {
   name: "email-app",
   template: `
         <section class="email-app mt-5">
         <filter-email @filtered="setFilter"></filter-email>
+        <div class="flex">
+        <email-nav></email-nav>
         <email-list @mailRemove="loadMailsAfterRemove" :mails="emailsToshow"></email-list>
-        </section>
+        </div>  
+      </section>
     `,
   data() {
     return {
@@ -61,7 +65,7 @@ export default {
     // console.log()
   }, watch: {
     '$route.params.mailsCategory'() {
-      console.log('The category changed bro')
+      this.mailsCategory = this.$route.params.mailsCategory
       emailService.getMails(this.mailsCategory).then((mails) => {
         this.mails = mails;
       })
@@ -71,5 +75,6 @@ export default {
     emailService,
     emailList,
     filterEmail,
+    emailNav,
   },
 };

@@ -1,0 +1,13 @@
+.link-nav{
+    padding: 3px 15px;
+    margin-bottom: 5px;
+    border-radius: 25px;
+}
+.link-nav:hover{
+    background-color: rgb(199, 199, 199);
+}
+.link-nav .router-link-active{
+    font-weight: bolder;
+    background-color: rgb(199, 199, 199);
+    border: 1px solid black;
+}

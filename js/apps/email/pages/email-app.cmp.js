@@ -6,7 +6,7 @@ export default {
   template: `
         <section class="email-app mt-5">
         <filter-email @filtered="setFilter"></filter-email>
-        <email-list :mails="emailsToshow"></email-list>
+        <email-list @mailRemove="loadMailsAfterRemove" :mails="emailsToshow"></email-list>
         </section>
     `,
   data() {
@@ -27,6 +27,12 @@ export default {
           mail.sender.toLowerCase().includes(name.toLowerCase()) ||
           mail.subject.toLowerCase().includes(name.toLowerCase())
       );
+    },
+    loadMailsAfterRemove(){
+      console.log('im here !');
+     const mails = this.mails;
+     const mailsAfterRemove = mails.filter(mail=> !mail.isRemove)
+     this.mails = mailsAfterRemove;
     },
   },
   computed: {

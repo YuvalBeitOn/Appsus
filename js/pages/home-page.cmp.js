@@ -15,7 +15,14 @@ It uses utility classes for typography and spacing to space content out within t
 </router-link>
 
 </div>
-</div>    
+</div>   
+<div class="why-us">
+<h2 class="why-us">Our Features</h2>
+<div class="box-features">
+<i class="icon-box fas fa-envelope"></i>
+<h4 class="title-box"></h4>
+</div>
+</div> 
 </section>
     `,
 

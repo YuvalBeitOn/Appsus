@@ -26,7 +26,10 @@ export default {
     },
     methods: {
         onRemoveMail() {
-            emailService.removeMail(this.mail.id).then(() => eventBus.$emit("show-msg", { txt: 'Your Message moved to trash!', type: 'alert-danger' }));
+            emailService.removeMail(this.mail.id).then(() => {
+                eventBus.$emit("show-msg", { txt: 'Your Message moved to trash!', type: 'alert-danger' })
+                this.$emit('mailRemove')   
+            });
         },
         onStarClicked() {
             emailService.toggleMailStar(this.mail.id).then(() => eventBus.$emit("show-msg", { txt: 'Your Message add to starred messages!', type: 'alert-success' }));

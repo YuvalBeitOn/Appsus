@@ -9,7 +9,7 @@ export default {
   template: `
         <section class="email-app mt-5">
         <filter-email @filtered="setFilter"></filter-email>
-        <div class="flex align-center justify-center">
+        <div class="flex">
         <email-nav @open-compose='isComposeOpen = true'></email-nav>
         <email-list @mailRemove="loadMailsAfterRemove" :mails="emailsToshow"></email-list>
         <email-compose v-if="isComposeOpen" @close-compose="isComposeOpen = false"></email-compose>

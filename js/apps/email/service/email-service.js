@@ -28,11 +28,10 @@ function getMails(mailsCategory) {
   }
 }
 
-function sendMail(mail) {
-  if (!mail.senderMail || !mail.subject || !mail.body) mail.isDraft = true;
+function sendMail(mail, isDraft) {
+  if (isDraft) mail.isDraft = true;
   else {
-      mail.isSent = true;
-      mail.isDraft = false;
+    mail.isDraft = false;
   }
   gMails.unshift(mail);
   return Promise.resolve();

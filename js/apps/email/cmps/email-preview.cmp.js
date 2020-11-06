@@ -33,7 +33,11 @@ export default {
             });
         },
         onStarClicked() {
-            emailService.toggleMailStar(this.mail.id).then(() => eventBus.$emit("show-msg", { txt: 'Your Message add to starred messages!', type: 'alert-success' }));
+            if (!this.mail.isStarred) {
+                emailService.toggleMailStar(this.mail.id).then(() => eventBus.$emit("show-msg", { txt: `You have marked your message as star succesfuly!`, type: 'alert-success' }));
+            }else{
+                emailService.toggleMailStar(this.mail.id).then(() => eventBus.$emit("show-msg", { txt: `You have unmarked your message as star succesfuly!`, type: 'alert-success' }));
+            }
         },
     },
     computed: {

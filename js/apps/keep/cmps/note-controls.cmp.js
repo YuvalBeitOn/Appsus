@@ -5,21 +5,29 @@ import { eventBus } from '../../../services/event-bus-service.js'
 
 export default {
     name: 'note-control',
-    props: ['note'],
+    props: ['note', 'isShowen'],
     template: `
-    <section class="note-controls">
-        <colors-menu v-if="showColorsMenu" @setBgc="setBgc"></colors-menu>
-        <button @click="deleteNote"><i class="fas fa-trash"></i></button>
-        <button @click="togglePinned"> <i class="fas fa-thumbtack"></i></button> 
-        <button @click="toggleColorsMenu"><i class="fas fa-palette"></i></button> 
-        <button @click="copyNote"> <i class="fas fa-clone"></i></button> 
-        <!-- <button @click="onEdit"> <i class="fas fa-edit"></i></button>   -->
-        <button @click="sendToMail"><i class="fas fa-at"></i></button> 
-    </section>
+    <transition name="fade">
+        <section v-show="isShowen" class="note-controls">
+            <colors-menu v-if="showColorsMenu" @setBgc="setBgc"></colors-menu>
+            <button @click="deleteNote"><i class="fas fa-trash"></i></button>
+            <button @click="togglePinned"> <i class="fas fa-thumbtack"></i></button> 
+            <button @click="toggleColorsMenu"><i class="fas fa-palette"></i></button> 
+            <button @click="copyNote"> <i class="fas fa-clone"></i></button> 
+            <button v-if="showEditBtn" @click="editNote"> <i class="fas fa-edit"></i></button>  
+            <button @click="sendToMail"><i class="fas fa-at"></i></button> 
+        </section>
+    </transition>
     `,
     data() {
         return {
             showColorsMenu: false
+        }
+    },
+    computed: {
+        showEditBtn() {
+            if (this.note.type === 'imgNote' || this.note.type === 'videoNote') return true;
+            else return false;
         }
     },
     methods: {
@@ -43,10 +51,10 @@ export default {
             keepService.cloneNote(this.note);
             eventBus.$emit("show-msg", { txt: 'Note copied!', type: 'alert-success' });
         },
-        // onEdit() {
-        //     this.note.onEdit = true;
-        //     console.log(this.note);
-        // }
+        editNote() {
+            console.log('before bus');
+            eventBus.$emit('editInsideNote', this.note);
+        },
         sendToMail() {
             keepService.sendNote(this.note);
         },

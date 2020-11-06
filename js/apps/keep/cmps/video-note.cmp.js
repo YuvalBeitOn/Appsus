@@ -6,7 +6,6 @@ export default {
         <div class="note-container">
             <iframe width="250" height="125" :src="formattedUrl"></iframe>
             <div @blur="editNote" :id="note.id" contenteditable class="txt flex align-center justify-center"> {{note.info.txt}} </div>
-            <!-- <textarea ref="textarea" v-model="url" v-if="isOnEdit"></textarea> -->
             <slot></slot>
             <span class="fab fa-youtube note-type"></span>
         </div>
@@ -28,11 +27,6 @@ export default {
             const videoId = params.get("v");
             let embedUrl = `https://www.youtube.com/embed/${videoId}`;
             return embedUrl
-        },
-        // computed: {
-        //     isOnEdit() {
-        //         return this.note.onEdit;
-        //     },
-        // },
+        }
     }
 }

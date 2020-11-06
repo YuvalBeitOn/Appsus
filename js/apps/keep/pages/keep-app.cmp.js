@@ -8,7 +8,7 @@ export default {
     name: 'keep-app',
     template: `
     <section class="keep">
-        <add-note  @addNote="addNote"/>
+        <add-note  @addNote="addNote" @updateNote="updateNote"/>
         <notes-gallery v-if="notes" :notes="notes"/>
     </section>
 
@@ -19,16 +19,24 @@ export default {
         }
     },
     methods: {
-        addNote(currNote) {
-            keepService.addNote(currNote)
-                .then(() => eventBus.$emit("show-msg", { txt: 'Your Note is added!', type: 'alert-success' }));
+        addNote(note) {
+            console.log('here');
+            keepService.addNote(note)
+                .then(() => eventBus.$emit("show-msg", { txt: 'Note is added!', type: 'alert-success' }));
         },
-        editNote(data) {
-            let noteType = keepService.getNoteTypeById(data.target.id)
+
+        editNote(ev) {
+            console.log('id:', ev.target.id);
+            let noteType = keepService.getNoteTypeById(ev.target.id)
             if (noteType === 'todoNote') {
-                const todoIdx = data.target.attributes.idxintodos.value;
-                keepService.editNote(data.target.id, data.target.innerText, todoIdx)
-            } else keepService.editNote(data.target.id, data.target.innerText)
+                const todoIdx = ev.target.attributes.idxintodos.value;
+                keepService.editNote(ev.target.id, ev.target.innerText, todoIdx)
+            } else keepService.editNote(ev.target.id, ev.target.innerText)
+        },
+        updateNote(note) {
+            keepService.updateNote(note)
+                .then(() => eventBus.$emit("show-msg", { txt: 'Note is updated!', type: 'alert-success' }));
+
         }
     },
     created() {

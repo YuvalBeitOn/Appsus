@@ -16,9 +16,9 @@ export default {
     </div>
     </section>
     `,
-    methods: {
-        openCompose() {
-            eventBus.$emit('compose-Msg', true)
+    methods:{
+        openCompose(){
+            this.$emit('open-compose')
         }
     }
 }

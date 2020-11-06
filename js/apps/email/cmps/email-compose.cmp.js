@@ -50,9 +50,9 @@ export default {
     },
   },
   destroyed() {
-    console.log(this.isSubmitted)
+    // console.log(this.isSubmitted)
     if (this.isSubmitted) {
-      return; 
+      return;
     } else {
       this.sendMsg(true)
     }

@@ -32,6 +32,7 @@ function sendMail(mail, isDraft) {
   if (isDraft) mail.isDraft = true;
   else {
     mail.isDraft = false;
+    mail.isSent = true;
   }
   gMails.unshift(mail);
   return Promise.resolve();

@@ -4,7 +4,8 @@ import { eventBus } from '../../../services/event-bus-service.js'
 export default {
     props: ['mail'],
     template: `
-        <router-link :to="'/email/'+mailsCategory+'/'+mail.id">  
+        <!-- <router-link :to="'/email/'+mailsCategory+'/'+mail.id">   -->
+        <router-link :to="mailLink">  
         <section class="email-preview flex" :class="sectionState">
             <section v-if="isSelected" class="email-buttons">
             <i @click.prevent.stop="onRemoveMail(mail.id)" class="fas fa-trash ml-5"></i>
@@ -35,7 +36,7 @@ export default {
         onStarClicked() {
             if (!this.mail.isStarred) {
                 emailService.toggleMailStar(this.mail.id).then(() => eventBus.$emit("show-msg", { txt: `You have marked your message as star succesfuly!`, type: 'alert-success' }));
-            }else{
+            } else {
                 emailService.toggleMailStar(this.mail.id).then(() => eventBus.$emit("show-msg", { txt: `You have unmarked your message as star succesfuly!`, type: 'alert-success' }));
             }
         },
@@ -57,6 +58,11 @@ export default {
             const currentDate = Date.now()
             const dayAgo = currentDate - (3600000 * 24)
             return (this.mail.sentAt <= dayAgo) ? new Date(this.mail.sentAt).toISOString().substr(0, 10) : new Date(this.mail.sentAt).toLocaleTimeString().substring(0, 5)
+        },
+        mailLink() {
+            if (!this.mail.isDraft) return `/email/${this.mailsCategory}/${this.mail.id}`
+            if (this.mail.isDraft) return `/email/${this.mailsCategory}/${this.mail.id}`
+            // if (this.mail.isDraft) return `/email/compose/${this.mail.id}`
         }
 
     },

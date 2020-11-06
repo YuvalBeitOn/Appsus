@@ -6,7 +6,7 @@ export default {
     <section class="email-list flex column">
         <ul>
         <li v-for="currMail in mails" :key="currMail.id" >
-           <email-preview @mailRemove="load" :mail="currMail" />
+           <email-preview @mailRemove="load" :mail="currMail"/>
         </li>
     </ul>
     </section>`,
@@ -17,7 +17,7 @@ export default {
     methods: {
         load() {
             this.$emit('mailRemove')
-        }
+        },
     },
     components: {
         emailPreview,

@@ -8,7 +8,7 @@ export default {
   name: "email-details",
   template: `
   <section class="main-container">
-  <email-nav></email-nav>
+  <!-- <email-nav></email-nav> -->
     <section v-if="mail" class="mail-details flex column wrap align-center ">
     <div class="flex row mt-5">
     <i @click="$router.go(-1)" class="btn-details fas fa-arrow-left mr-5"></i>

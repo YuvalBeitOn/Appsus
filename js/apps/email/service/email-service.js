@@ -6,7 +6,8 @@ export const emailService = {
     removeMail,
     getMailById,
     sendMail,
-    toggleMailStar
+    toggleMailStar,
+    createMail
 };  
 
 function getMails(mailsCategory){

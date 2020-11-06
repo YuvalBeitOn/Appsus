@@ -2,4 +2,5 @@
 @import './cmps/email-preview.css';
 @import './cmps/email-details.css';
 @import './cmps/email-filter.css';
-@import './cmps/email-nav.css'
+@import './cmps/email-nav.css';
+@import './cmps/email-compose.css';

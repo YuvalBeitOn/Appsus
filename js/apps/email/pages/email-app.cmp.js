@@ -2,14 +2,17 @@ import { emailService } from "../../email/service/email-service.js";
 import emailList from "../../email/cmps/email-list.cmp.js";
 import filterEmail from "../cmps/email-filter.cmp.js";
 import emailNav from "../cmps/email-nav.cmp.js"
+import emailCompose from "../cmps/email-compose.cmp.js"
+import {eventBus} from '../../../services/event-bus-service.js'
 export default {
   name: "email-app",
   template: `
         <section class="email-app mt-5">
         <filter-email @filtered="setFilter"></filter-email>
-        <div class="flex">
+        <div class="flex align-center justify-center">
         <email-nav></email-nav>
         <email-list @mailRemove="loadMailsAfterRemove" :mails="emailsToshow"></email-list>
+        <email-compose></email-compose>
         </div>  
       </section>
     `,
@@ -75,5 +78,6 @@ export default {
     emailList,
     filterEmail,
     emailNav,
+    emailCompose,
   },
 };

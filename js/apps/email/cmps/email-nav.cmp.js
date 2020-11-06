@@ -1,9 +1,9 @@
-import {eventBus} from '../../../services/event-bus-service.js'
+import { eventBus } from '../../../services/event-bus-service.js'
 
 
 export default {
-    name:'nav-bar-email',
-    template:`
+    name: 'nav-bar-email',
+    template: `
     <section class="nav-bar-email">
     <div class="container-controls-nav flex column wrap">
     <div @click="openCompose" class="compose-container mb-5 flex column  align-center"><span class="title-compose">Compos</span><img class="compos-icon ml-5" src="../../../../assets/imgs/compose.png"></div>
@@ -16,10 +16,9 @@ export default {
     </div>
     </section>
     `,
-    methods:{
-        openCompose(){
-            eventBus.$emit('compose-Msg',true)
-
+    methods: {
+        openCompose() {
+            eventBus.$emit('compose-Msg', true)
         }
     }
 }

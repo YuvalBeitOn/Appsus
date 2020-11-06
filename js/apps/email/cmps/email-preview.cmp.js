@@ -29,7 +29,7 @@ export default {
         onRemoveMail(mailId) {
             emailService.removeMail(mailId).then(() => {
                 eventBus.$emit("show-msg", { txt: 'Your Message moved to trash!', type: 'alert-danger' })
-                this.$emit('mailRemove')   
+                this.$emit('mailRemove')
             });
         },
         onStarClicked() {
@@ -46,13 +46,13 @@ export default {
         sectionState() {
             return { 'section-readed': (this.mail.isRead), 'section-marked': this.isSelected }
         },
-        textToShow(){
-            return this.mail.body.substring(0,50) + '....'
+        textToShow() {
+            return this.mail.body.substring(0, 50) + '....'
         },
         dateToShow() {
             const currentDate = Date.now()
             const dayAgo = currentDate - (3600000 * 24)
-           return (this.mail.sentAt <= dayAgo)? new Date(this.mail.sentAt).toISOString().substr(0, 10) : new Date(this.mail.sentAt).toLocaleTimeString().substring(0,5)
+            return (this.mail.sentAt <= dayAgo) ? new Date(this.mail.sentAt).toISOString().substr(0, 10) : new Date(this.mail.sentAt).toLocaleTimeString().substring(0, 5)
         }
 
     },

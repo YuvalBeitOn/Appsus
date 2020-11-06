@@ -3,7 +3,7 @@ import emailList from "../../email/cmps/email-list.cmp.js";
 import filterEmail from "../cmps/email-filter.cmp.js";
 import emailNav from "../cmps/email-nav.cmp.js"
 import emailCompose from "../cmps/email-compose.cmp.js"
-import {eventBus} from '../../../services/event-bus-service.js'
+import { eventBus } from '../../../services/event-bus-service.js'
 export default {
   name: "email-app",
   template: `
@@ -36,11 +36,11 @@ export default {
           mail.subject.toLowerCase().includes(name.toLowerCase())
       );
     },
-    loadMailsAfterRemove(){
+    loadMailsAfterRemove() {
       console.log('im here !');
-     const mails = this.mails;
-     const mailsAfterRemove = mails.filter(mail=> !mail.isRemoved)
-     this.mails = mailsAfterRemove;
+      const mails = this.mails;
+      const mailsAfterRemove = mails.filter(mail => !mail.isRemoved)
+      this.mails = mailsAfterRemove;
     },
   },
   computed: {

@@ -1,5 +1,5 @@
-import {emailService} from '../service/email-service.js';
-import {eventBus} from '../../../services/event-bus-service.js'
+import { emailService } from '../service/email-service.js';
+import { eventBus } from '../../../services/event-bus-service.js'
 export default {
   name: "email-compose",
   template: `
@@ -24,23 +24,23 @@ export default {
       isSendMsg: false,
     }
   },
-  methods:{
-      getEmptyCell(){
-         this.composeMsg.to = ""
-         this.composeMsg.subject = ""
-         this.composeMsg.body = ""
-      },
-      sendMsg(){
-          const depCopyMsg = JSON.parse(JSON.stringify(this.composeMsg))
-         const newMail = emailService.createMail('Me',depCopyMsg.to,depCopyMsg.subject,depCopyMsg.body)
-         emailService.sendMail(newMail).then(()=>{
-             eventBus.$emit("show-msg", { txt: 'Your Message has sent!', type: 'alert-success' })
-             this.getEmptyCell()
-            this.isSendMsg=false
-         })
-      },
+  methods: {
+    getEmptyCell() {
+      this.composeMsg.to = ""
+      this.composeMsg.subject = ""
+      this.composeMsg.body = ""
+    },
+    sendMsg() {
+      const depCopyMsg = JSON.parse(JSON.stringify(this.composeMsg))
+      const newMail = emailService.createMail('Me', depCopyMsg.to, depCopyMsg.subject, depCopyMsg.body)
+      emailService.sendMail(newMail).then(() => {
+        eventBus.$emit("show-msg", { txt: 'Your Message has sent!', type: 'alert-success' })
+        this.getEmptyCell()
+        this.isSendMsg = false
+      })
+    },
   },
-  created(){
-    eventBus.$on('compose-Msg',isSend => this.isSendMsg=isSend)
+  created() {
+    eventBus.$on('compose-Msg', isSend => this.isSendMsg = isSend)
   }
 };

@@ -1,5 +1,5 @@
 import { emailService } from '../service/email-service.js'
-import {eventBus} from '../../../services/event-bus-service.js'
+import { eventBus } from '../../../services/event-bus-service.js'
 // import emailNav from '../cmps/email-nav.cmp.js'
 
 
@@ -36,9 +36,9 @@ export default {
     removeMail(id) {
       emailService.removeMail(id).then(() => {
         this.$router.go(-1)
-      eventBus.$emit("show-msg", {txt: 'Your Message moved to trash!', type:'alert-danger'})
+        eventBus.$emit("show-msg", { txt: 'Your Message moved to trash!', type: 'alert-danger' })
       })
-      
+
     }
   },
   computed: {
@@ -50,7 +50,7 @@ export default {
   created() {
     this.loadMail();
   },
-  components:{
+  components: {
     // emailNav
   }
 };

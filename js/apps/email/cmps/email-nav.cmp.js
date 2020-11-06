@@ -19,7 +19,6 @@ export default {
     methods:{
         openCompose(){
             eventBus.$emit('compose-Msg',true)
-
         }
     }
 }

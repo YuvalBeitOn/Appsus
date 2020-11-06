@@ -3,7 +3,7 @@ import {eventBus} from '../../../services/event-bus-service.js'
 export default {
   name: "email-compose",
   template: `
-              <form  v-if="isSendMsg" class="compose-form flex column wrap align-center" @submit.prevent="sendMsg">
+             <section v-if="isSendMsg" class="email-compose compose-form flex column wrap align-center">
                   <div class="header-compose">
                   <button class="btn-close" @click="isSendMsg=!isSendMsg">X</button>
                   </div>
@@ -11,8 +11,8 @@ export default {
                   <input type="text" placeholder="Subject"  v-model.trim="composeMsg.subject" >
                   <textarea id="message" v-model="composeMsg.body" placeholder="Enter Your msg" name="compose-msg" rows="4" cols="50" >
                  </textarea>
-                 <button class="send-compose">Send Massage</button>
-                  </form>
+                 <button @click="sendMsg" class="send-compose">Send Massage</button>
+                  </section>
       `,
   data() {
     return {

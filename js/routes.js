@@ -8,6 +8,10 @@ const myRoutes = [{
     component: homePage
 },
 {
+    path: '/email/compose',
+    component: emailCompose
+},
+{
     path: '/email/:mailsCategory',
     component: emailApp
 },
@@ -15,12 +19,9 @@ const myRoutes = [{
     path: '/email/:mailsCategory/:mailId',
     component: emailDetails
 },
-//TODO: MOVE THIS PATHS TO MAIL APP ROUTS 
-{
-    path: '/email/compose',
-    component: emailCompose
-},
-// /////////////////////////////////////////////
+
+
+
 {
     path: '/keep',
     component: keepApp

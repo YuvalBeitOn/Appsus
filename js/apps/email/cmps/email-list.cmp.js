@@ -15,9 +15,9 @@ export default {
         }
     },
     methods: {
-    load(){
-        this.$emit('mailRemove')
-    }
+        load() {
+            this.$emit('mailRemove')
+        }
     },
     components: {
         emailPreview,

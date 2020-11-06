@@ -2,7 +2,8 @@ import { eventBus } from '../services/event-bus-service.js'
 
 export default {
     template: `
-        <section v-if="msg" class="flex column justify-center align-center" :class="['alert',msg.type]">
+    
+        <section v-if="msg" class="alert flex column justify-center align-center" :class="msg.type">
             <p>{{msg.txt}}</p>
             <div>
             <button :class="msg.type" @click="msg=null">X</button>

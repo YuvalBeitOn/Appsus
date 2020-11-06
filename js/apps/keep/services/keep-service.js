@@ -25,17 +25,17 @@ function createNotes() {
             "id": utilService.makeId(),
             "isPinned": false,
             "info": { "txt": "Fullstack Me Baby!" },
-            "bgc": 'rgba(219, 186, 188, 0.8)',
+            "bgc": 'rgb(232, 234, 237)',
         },
         {
             "type": "imgNote",
             "id": utilService.makeId(),
             "isPinned": true,
             "info": {
-                "txt": 'Take a trip around the world...',
-                "url": "https://pix10.agoda.net/hotelImages/1199068/-1/09cb9a2780bf41ad1e8f8a3d2e074754.jpg?s=1024x768"
+                "txt": 'Asi we need you',
+                "url": "/assets/imgs/hero.jpg"
             },
-            "bgc": 'rgba(219, 186, 188, 0.8)',
+            "bgc": 'rgb(232, 234, 237)',
         },
         {
             "type": "todoNote",
@@ -46,7 +46,7 @@ function createNotes() {
                     { txt: 'Go to sleep', isDone: false }
                 ]
             },
-            "bgc": 'rgba(219, 186, 188, 0.8)',
+            "bgc": 'rgb(232, 234, 237)',
         },
         {
             "type": 'videoNote',
@@ -57,18 +57,18 @@ function createNotes() {
                 "url": 'https://www.youtube.com/watch?v=nhBVL41-_Cw',
 
             },
-            "bgc": 'rgba(219, 186, 188, 0.8)',
+            "bgc": 'rgb(232, 234, 237)',
         },
         {
             "type": 'videoNote',
             "id": utilService.makeId(),
             "isPinned": true,
             "info": {
-                "txt": 'Static&Benel',
-                "url": 'https://www.youtube.com/watch?v=-2EZbz22iNg&ab_channel=StaticandBenEl-%D7%A1%D7%98%D7%98%D7%99%D7%A7%D7%95%D7%91%D7%9F%D7%90%D7%9C',
+                "txt": 'Cute dogs',
+                "url": 'https://www.youtube.com/watch?v=wtH-hdOF1uA&ab_channel=AwwAnimals',
 
             },
-            "bgc": 'rgba(219, 186, 188, 0.8)',
+            "bgc": 'rgb(232, 234, 237)',
         },
         {
             "type": 'todoNote',
@@ -80,14 +80,14 @@ function createNotes() {
                     { txt: 'Do push and pull', isDone: false }
                 ]
             },
-            "bgc": 'rgba(219, 186, 188, 0.8)',
+            "bgc": 'rgb(232, 234, 237)',
         },
         {
             "type": 'textNote',
             id: utilService.makeId(),
             "isPinned": true,
             "info": { "txt": "Make this app amazing!" },
-            "bgc": 'rgba(219, 186, 188, 0.8)',
+            "bgc": 'rgb(232, 234, 237)',
         },
         {
             "type": 'videoNote',
@@ -97,18 +97,18 @@ function createNotes() {
                 "txt": 'Babys',
                 "url": 'https://www.youtube.com/watch?v=HpUT7OCbcJU',
             },
-            "bgc": 'rgba(219, 186, 188, 0.8)',
+            "bgc": 'rgb(232, 234, 237)',
         },
         {
             "type": 'videoNote',
             "id": utilService.makeId(),
             "isPinned": true,
             "info": {
-                "txt": 'Great song',
-                "url": 'https://www.youtube.com/watch?v=iaGjz4dtr3o&list=RDiaGjz4dtr3o&start_radio=1&ab_channel=BakermatVEVO',
+                "txt": 'South America is waiting for me',
+                "url": 'https://www.youtube.com/watch?v=pp95UwZGD8Y&ab_channel=MortenRustad',
 
             },
-            "bgc": 'rgba(219, 186, 188, 0.8)',
+            "bgc": 'rgb(232, 234, 237)',
         },
         {
             "type": 'todoNote',
@@ -120,7 +120,7 @@ function createNotes() {
                     { txt: 'Go to sleep', isDone: true }
                 ]
             },
-            "bgc": 'rgba(219, 186, 188, 0.8)',
+            "bgc": 'rgb(232, 234, 237)',
         },
         {
             "type": 'todoNote',
@@ -132,7 +132,7 @@ function createNotes() {
                     { txt: 'Debug your code', isDone: true }
                 ]
             },
-            "bgc": 'rgba(219, 186, 188, 0.8)',
+            "bgc": 'rgb(232, 234, 237)',
         },
         {
             "type": 'textNote',
@@ -141,7 +141,7 @@ function createNotes() {
             "info": {
                 txt: `It will be worth it in the end...`
             },
-            "bgc": 'rgba(219, 186, 188, 0.8)',
+            "bgc": 'rgb(232, 234, 237)',
         },
         {
             "type": 'textNote',
@@ -150,7 +150,7 @@ function createNotes() {
             "info": {
                 txt: `here are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. `
             },
-            "bgc": 'rgba(219, 186, 188, 0.8)',
+            "bgc": 'rgb(232, 234, 237)',
         },
     ]
     utilService.storeToStorage(STORAGE_KEY, notes);
@@ -181,7 +181,6 @@ function editNote(noteId, newVal, idx) {
         note.info.todos[idx].txt = newVal;
         console.log('after edit:', note);
     }
-
     utilService.storeToStorage(STORAGE_KEY, notes);
 }
 
@@ -210,6 +209,7 @@ function deleteNote(noteId) {
     const idx = notes.findIndex(note => {
         return note.id === noteId
     });
+    notes.splice(idx, 1);
     utilService.storeToStorage(STORAGE_KEY, notes)
 }
 

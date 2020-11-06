@@ -3,7 +3,7 @@
     width: 60%;
     box-shadow: 0px 0px 3px 0px rgba(48, 47, 47, 0.75);
     border-radius: 5px;
-    margin-top: 1rem;
+    margin-top: 3rem;
     padding: 0.5rem;
 }
 
@@ -35,18 +35,22 @@
     background-color: transparent;
     outline: transparent;
     border: none;
-    color: #202124;
-    opacity: .71;
 }
 
 .fa-icon {
     cursor: pointer;
     font-size: 1.3rem;
-    transition: transform 0.3s;
+    transition: transform 0.2s;
+    color: #949494;
 }
 
 .fa-icon:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    color: #202124;
+}
+
+.focus {
+    color: #202124;
 }
 
 @media (max-width: 1100px) {
@@ -60,8 +64,12 @@
 }
 
 @media (max-width: 800px) {
+    .add-note-container {
+        margin-top: 2rem;
+    }
     .add-note-btns {
-        margin-top: 0.5rem;
+        margin-top: 0.3rem;
+        margin-bottom: 0.5rem;
         position: static;
         height: 50%;
         width: 100%;
@@ -74,6 +82,7 @@
         justify-content: center;
     }
     .add-note-container {
+        margin-top: 1rem;
         width: 90%;
     }
 }

@@ -1,59 +1,73 @@
 /* helpers! */
+
+
 /* Flex Helpers! */
+
 .flex {
-  display: flex;
+    display: flex;
 }
 
 .flex.space-around {
-  justify-content: space-around;
+    justify-content: space-around;
 }
 
 .flex.space-between {
-  justify-content: space-between;
+    justify-content: space-between;
 }
 
 .flex.align-center {
-  align-items: center;
+    align-items: center;
 }
 
 .flex.column {
-  flex-direction: column;
+    flex-direction: column;
 }
 
 .flex.wrap {
-  flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 .flex.justify-center {
-  justify-content: center;
+    justify-content: center;
 }
 
 .flex>.grow {
-  flex-grow: 1;
+    flex-grow: 1;
 }
-.align-self-end{
-  align-self: flex-end;
+
+.align-self-end {
+    align-self: flex-end;
 }
+
+
 /* Margin element */
+
 .mt-5 {
-  margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 .mr-5 {
-  margin-right: 0.3125rem;
+    margin-right: 0.3125rem;
 }
 
 .ml-5 {
-  margin-left: 0.3125rem;
+    margin-left: 0.3125rem;
 }
 
 .mb-5 {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
+
 /* Ul */
+
 .clean-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
 }

@@ -7,7 +7,7 @@
      display: inline-block;
      margin: 0 0 1em;
      width: 100%;
-     padding: 1rem;
+     padding: 0.5rem;
  }
  
  .notes-gallery {
@@ -37,4 +37,9 @@
      left: 0;
      bottom: 0;
      padding: 0.5rem;
+ }
+ 
+ .txt {
+     font-weight: bold;
+     margin-top: 0.5rem;
  }

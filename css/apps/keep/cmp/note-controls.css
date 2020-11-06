@@ -1,0 +1,13 @@
+.note-controls {
+    margin-top: 1rem;
+}
+
+.note-controls button {
+    margin: 0.5rem;
+    font-size: 1rem;
+    background-color: transparent;
+}
+
+.note-controls button:hover {
+    transform: scale(1.1);
+}

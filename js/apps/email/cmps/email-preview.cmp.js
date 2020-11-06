@@ -13,7 +13,7 @@ export default {
             <i @click.prevent.stop="onStarClicked" class="fas fa-star mr-5 ml-5 " :class="starClass"></i>
            <div class="email-sender" :class="readState">{{mail.sender}}</div>
            <div class="email-subject" :class="readState">{{mail.subject}} - </div>
-           <div class="email-body"><long-text :txt="mail.body"></long-text></div>
+           <div class="email-body">{{textToShow}}</div>
            <div class="email-date align-self-end" :class="readState">{{dateToShow}}</div>
         </section>
         </router-link>
@@ -45,6 +45,9 @@ export default {
         },
         sectionState() {
             return { 'section-readed': (this.mail.isRead), 'section-marked': this.isSelected }
+        },
+        textToShow(){
+            return this.mail.body.substring(0,50) + '....'
         },
         dateToShow() {
             const currentDate = Date.now()

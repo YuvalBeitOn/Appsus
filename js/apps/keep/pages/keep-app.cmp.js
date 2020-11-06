@@ -20,14 +20,15 @@ export default {
     },
     methods: {
         addNote(currNote) {
-            console.log(currNote);
-            keepService.addNote(currNote);
+            keepService.addNote(currNote)
+                .then(() => eventBus.$emit("show-msg", { txt: 'Your Note is added!', type: 'alert-success' }));
         },
-        editNote(ev) {
-            const todoIdx = ev.target.attributes.idxintodos.value;
-            console.log('data in keepApp:', ev.target.attributes.idxintodos.value);
-            if (todoIdx) keepService.editNote(ev.target.id, ev.target.innerText, todoIdx)
-            else keepService.editNote(ev.target.id, ev.target.innerText)
+        editNote(data) {
+            let noteType = keepService.getNoteTypeById(data.target.id)
+            if (noteType === 'todoNote') {
+                const todoIdx = data.target.attributes.idxintodos.value;
+                keepService.editNote(data.target.id, data.target.innerText, todoIdx)
+            } else keepService.editNote(data.target.id, data.target.innerText)
         }
     },
     created() {

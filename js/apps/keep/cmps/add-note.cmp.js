@@ -42,7 +42,6 @@ export default {
     methods: {
         addNote() {
             this.$emit('addNote', this.currNote)
-            console.log(this.currNote);
             this.currNote = {
                 type: 'textNote',
                 isPinned: false,

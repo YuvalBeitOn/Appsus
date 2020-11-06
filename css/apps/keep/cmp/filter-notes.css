@@ -1,0 +1,16 @@
+.filter-notes input {
+    margin-right: 0.5rem;
+}
+
+.filter-notes select,
+.filter-notes input {
+    font-family: 'Assistant', sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.filter-notes {
+    display: flex;
+    justify-content: center;
+}

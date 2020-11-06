@@ -12,7 +12,7 @@ export const emailService = {
 function getMails(mailsCategory) {
   switch (mailsCategory) {
     case "all":
-      return Promise.resolve(gMails);
+      return Promise.resolve(gMails.filter((mail) => !mail.isDraft));
     case "drafts":
       return Promise.resolve(gMails.filter((mail) => mail.isDraft));
     case "starred":

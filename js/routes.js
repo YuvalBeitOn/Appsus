@@ -8,7 +8,7 @@ const myRoutes = [{
     component: homePage
 },
 {
-    path: '/email/compose',
+    path: '/email/compose/',
     component: emailCompose
 },
 {

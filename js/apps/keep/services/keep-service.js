@@ -13,7 +13,8 @@ export default {
     createNotes,
     editNote,
     sendNote,
-    getNoteTypeById
+    getNoteTypeById,
+    updateNote
 }
 
 function createNotes() {
@@ -25,7 +26,6 @@ function createNotes() {
             "isPinned": false,
             "info": { "txt": "Fullstack Me Baby!" },
             "bgc": 'rgba(219, 186, 188, 0.8)',
-            "onEdit": false
         },
         {
             "type": "imgNote",
@@ -36,7 +36,6 @@ function createNotes() {
                 "url": "https://pix10.agoda.net/hotelImages/1199068/-1/09cb9a2780bf41ad1e8f8a3d2e074754.jpg?s=1024x768"
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
-            "onEdit": false
         },
         {
             "type": "todoNote",
@@ -48,7 +47,6 @@ function createNotes() {
                 ]
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
-            "onEdit": false
         },
         {
             "type": 'videoNote',
@@ -60,7 +58,6 @@ function createNotes() {
 
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
-            "onEdit": false
         },
         {
             "type": 'videoNote',
@@ -72,7 +69,6 @@ function createNotes() {
 
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
-            "onEdit": false
         },
         {
             "type": 'todoNote',
@@ -85,7 +81,6 @@ function createNotes() {
                 ]
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
-            "onEdit": false
         },
         {
             "type": 'textNote',
@@ -93,7 +88,6 @@ function createNotes() {
             "isPinned": true,
             "info": { "txt": "Make this app amazing!" },
             "bgc": 'rgba(219, 186, 188, 0.8)',
-            "onEdit": false
         },
         {
             "type": 'videoNote',
@@ -104,7 +98,6 @@ function createNotes() {
                 "url": 'https://www.youtube.com/watch?v=HpUT7OCbcJU',
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
-            "onEdit": false
         },
         {
             "type": 'videoNote',
@@ -116,7 +109,6 @@ function createNotes() {
 
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
-            "onEdit": false
         },
         {
             "type": 'todoNote',
@@ -129,7 +121,6 @@ function createNotes() {
                 ]
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
-            "onEdit": false
         },
         {
             "type": 'todoNote',
@@ -142,7 +133,6 @@ function createNotes() {
                 ]
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
-            "onEdit": false
         },
         {
             "type": 'textNote',
@@ -152,7 +142,6 @@ function createNotes() {
                 txt: `It will be worth it in the end...`
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
-            "onEdit": false
         },
         {
             "type": 'textNote',
@@ -162,7 +151,6 @@ function createNotes() {
                 txt: `here are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. `
             },
             "bgc": 'rgba(219, 186, 188, 0.8)',
-            "onEdit": false
         },
     ]
     utilService.storeToStorage(STORAGE_KEY, notes);
@@ -234,8 +222,12 @@ function addNote(note) {
     }
     note.id = utilService.makeId();
     note.bgc = 'lightblue';
-    note.onEdit = false;
     notes.push(note);
     utilService.storeToStorage(STORAGE_KEY, notes);
     return Promise.resolve(note);
+}
+
+function updateNote(note) {
+    const idx = notes.findIndex(currNote => note.id === currNote.id);
+    notes.splice(idx, 1, note);
 }

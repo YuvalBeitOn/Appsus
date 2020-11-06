@@ -1,7 +1,7 @@
 .colors-container {
     position: absolute;
-    bottom: -15px;
-    right: 10px;
+    bottom: 20px;
+    /* right: 5px; */
     padding: 0.5rem;
 }
 

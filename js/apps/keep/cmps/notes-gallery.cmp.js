@@ -17,7 +17,6 @@ export default {
     data() {
         return {
             filterBy: null,
-            notesToShow: null
         };
     },
     methods: {
@@ -40,13 +39,21 @@ export default {
             })
         },
         filteredNotes() {
-            if (!this.filterBy) return this.notes;
-            let notes = this.notes.filter(note => {
-                return note.type === this.filterBy.type
-            })
-            notes = notes.filter(note => {
-                return note.info.txt.toLowerCase().includes(this.filterBy.searchTerm.toLowerCase())
-            })
+            let notes = this.notes;
+            if (!this.filterBy || (!this.filterBy.type && !this.filterBy.searchTerm)) return this.notes;
+            if (this.filterBy.type) {
+                notes = this.notes.filter(note => {
+                    return note.type === this.filterBy.type
+                })
+            }
+            if (this.filterBy.searchTerm) {
+                notes = notes.filter(note => {
+                    if (note.type === 'todoNote') {
+                        var includes = note.info.todos.some(todo => todo.txt.toLowerCase().includes(this.filterBy.searchTerm.toLowerCase()))
+                        if (includes) return note;
+                    } else return note.info.txt.toLowerCase().includes(this.filterBy.searchTerm.toLowerCase())
+                })
+            }
             return notes;
         }
 

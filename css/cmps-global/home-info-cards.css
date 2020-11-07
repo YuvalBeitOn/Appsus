@@ -3,7 +3,7 @@
 }
 .box-info{
     background-color: #F8F9FA;
-    /* height: 10rem; */
+  
     padding: 2rem;
     margin-bottom: 2rem;
 }
@@ -40,4 +40,21 @@
 }
 .item-social{
     color:#1a73e8;
+}
+@media (max-width:810px){
+    .info-container{
+        flex-flow: column wrap;
+    }
+    .info-content{
+        width: 100%;
+    }
+    .image-info{
+        width: 100%;
+    }
+    .our-team{
+        flex-flow: column wrap;
+    }
+    .box-team{
+        width: 80%;
+    }
 }

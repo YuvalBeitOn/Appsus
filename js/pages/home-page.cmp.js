@@ -22,7 +22,7 @@ It uses utility classes for typography and spacing to space content out within t
 <section class="our-features">
 <div class="container features-container">
 <h2 class="why-us-title">Our Features</h2>
-<div class="why-us flex  align-center justify-center">
+<div class="why-us-container flex  align-center justify-center">
 <div class="box-features flex column wrap justify-center align-center">
 <i class="icon-box word-red fas fa-envelope"></i>
 <h3 class="title-box">Mail-Box</h3>
@@ -50,7 +50,7 @@ It uses utility classes for typography and spacing to space content out within t
 <!-- Section info app -->
 <section class="info-app">
 <div class="box-info keep-info">
-<div class="container flex wrap">
+<div class="info-container container flex wrap">
 <div class="info-content flex column justify-center align-center">
     <h2 class="title-box title-info">Save your thoughts, wherever you are</h2>
     <p class="text-box text-info">
@@ -64,7 +64,7 @@ Quickly filter and search for notes by color and other attributes like lists wit
 </div>
 
 <div class="box-info mail-info">
-<div class="container flex wrap">
+<div class="info-container container flex wrap">
 <img src="../../assets/imgs/mocupkeep.jpg" class="image-info"  alt="">
 <div class="info-content flex column justify-center align-center">
     <h2 class="title-box title-info">Send your mail, wherever you are</h2>
@@ -78,7 +78,7 @@ Quickly filter and search for notes by color and other attributes like lists wit
 </div>
 
 <div class="box-info book-info">
-<div class="container flex wrap">
+<div class="info-container container flex wrap">
 <div class="info-content flex column justify-center align-center">
     <h2 class="title-box title-info">Save your Books, wherever you are</h2>
     <p class="text-box text-info">

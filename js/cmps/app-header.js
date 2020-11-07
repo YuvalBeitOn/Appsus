@@ -3,7 +3,7 @@ export default {
     name: 'app-header',
     template: `
     <header class="app-header ">
-    <div class="flex space-between align-center">
+    <div class="container flex space-between align-center">
         <div class="logo-container flex">
         <img src="assets/imgs/logo.svg" class="logo-svg " alt="">
              <h1 class="logo ml-5">Appsus</h1>

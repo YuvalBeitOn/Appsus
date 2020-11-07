@@ -6,15 +6,16 @@ import emailCompose from "../cmps/email-compose.cmp.js"
 import { eventBus } from '../../../services/event-bus-service.js'
 import keepService from '../../../apps/keep/services/keep-service.js'
 
+
 export default {
   name: "email-app",
   template: `
         <section class="email-app mt-5">
         <filter-email @filtered="setFilter"></filter-email>
-        <div class="flex">
-        <email-nav @open-compose='isComposeOpen = true'></email-nav>
+        <div class="flex justify-center">
+        <i @click="toggleNavBar" class="btn-hamburger nav-hm fas fa-bars"></i>
+        <email-nav @toggleNavBar="toggleNavBar" @open-compose='isComposeOpen = true' :class="navClass"></email-nav>
         <router-view @mailRemove="loadMailsAfterRemove" :mails="emailsToshow"></router-view>
-        <!-- <email-list @mailRemove="loadMailsAfterRemove" :mails="emailsToshow"></email-list> -->
         <email-compose :mail="currentMail" v-if="isComposeOpen" @close-compose="isComposeOpen = false"></email-compose>
         </div>  
       </section>
@@ -25,10 +26,18 @@ export default {
       filterBy: null,
       mailsCategory: this.$route.params.mailsCategory,
       isComposeOpen: false,
-      currentMail: null
+      currentMail: null,
+      isNavShow:null,
     };
   },
   methods: {
+    checkWindowWidth(){
+     this.isNavShow = (window.innerWidth >800) ? true : false;
+     
+    },
+    toggleNavBar(){
+      this.isNavShow = !this.isNavShow
+  },
     setFilter(filterBy) {
       this.filterBy = filterBy;
     },
@@ -87,8 +96,17 @@ export default {
         else return this.mails.filter((mail) => !mail.isRead);
       }
     },
+    navClass(){
+      if(this.isNavShow){
+        return 'open-nav'
+      } else{
+        return ''
+      }
+      
+    }
   },
   created() {
+    this.checkWindowWidth()
     const noteId = this.$route.params.noteId
     if (this.mailsCategory) {
       emailService.getMails(this.mailsCategory).then((mails) => {

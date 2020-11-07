@@ -62,6 +62,7 @@ export default {
       return;
     } else {
       this.sendMsg(true)
+      
     }
   }
 };

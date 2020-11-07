@@ -65,7 +65,7 @@ Quickly filter and search for notes by color and other attributes like lists wit
 
 <div class="box-info mail-info">
 <div class="info-container container flex wrap">
-<img src="../../assets/imgs/mocupkeep.jpg" class="image-info"  alt="">
+<img src="./assets/imgs/mocupkeep.jpg" class="image-info"  alt="">
 <div class="info-content flex column justify-center align-center">
     <h2 class="title-box title-info">Send your mail, wherever you are</h2>
     <p class="text-box text-info">
@@ -87,7 +87,7 @@ Quickly filter and search for notes by color and other attributes like lists wit
 <router-link to="/book" exact><button class="btn-home">Learn More</button>
 </router-link>
 </div>
-<img src="../../assets/imgs/mocupkeep.jpg" class="image-info"  alt="">
+<img src="./assets/imgs/mocupkeep.jpg" class="image-info"  alt="">
 
 </div>
 </div>
@@ -95,7 +95,7 @@ Quickly filter and search for notes by color and other attributes like lists wit
 <h2 class="flex justify-center">Our Team</h2>
 <section class="our-team container flex row justify-center align-center">
     <div class="box-team flex column justify-center align-center wrap">
-<!-- <img src="../../assets/imgs/team/team-guy.png" class="image-team"  alt=""> -->
+<img src="./assets/imgs/team/team-guy.png" class="image-team"  alt="">
     <h2 class="title-box title-team">Name Name</h2>
     <p class="text-box text-team">Lorem Ipsum Dolar Smit</p>
     <ul class="social-icons clean-list flex justify-center">
@@ -105,7 +105,7 @@ Quickly filter and search for notes by color and other attributes like lists wit
 </ul>
     </div>
     <div class="box-team flex column justify-center align-center wrap">
-<!-- <img src="../../assets/imgs/team/team-guy.png" class="image-team"  alt=""> -->
+<!-- <img src="./assets/imgs/team/team-guy.png" class="image-team"  alt=""> -->
     <h2 class="title-box title-team">Name Name</h2>
     <p class="text-box text-team">Lorem Ipsum Dolar Smit</p>
     <ul class="social-icons clean-list flex justify-center">
@@ -115,7 +115,7 @@ Quickly filter and search for notes by color and other attributes like lists wit
 </ul>
     </div>
     <div class="box-team flex column justify-center align-center wrap">
-<!-- <img src="../../assets/imgs/team/team-guy.png" class="image-team"  alt=""> -->
+<!-- <img src="./assets/imgs/team/team-guy.png" class="image-team"  alt=""> -->
     <h2 class="title-box title-team">Name</h2>
     <p class="text-box text-team">Lorem Ipsum Dolar Smit</p>
     <ul class="social-icons clean-list flex justify-center">

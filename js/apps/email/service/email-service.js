@@ -54,7 +54,6 @@ function removeMail(id) {
   if (mail.isRemoved){
     gMails.splice(idx, 1)
   }else gMails[idx].isRemoved = true;
-  
   return Promise.resolve();
 }
 

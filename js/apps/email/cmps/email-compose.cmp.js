@@ -42,7 +42,7 @@ export default {
       const clonedMessage = JSON.parse(JSON.stringify(this.composeMsg))
       const newMail = emailService.createMail('Me', clonedMessage.to, clonedMessage.subject, clonedMessage.body)
       emailService.sendMail(newMail, isDraft).then(() => {
-        eventBus.$emit("show-msg", { txt: 'Your message was sent successfuly!', type: 'alert-success' })
+        if(!isDraft) eventBus.$emit("show-msg", { txt: 'Your message was sent successfuly!', type: 'alert-success' });
         this.getEmptyCell()
         this.$emit('close-compose')
       })

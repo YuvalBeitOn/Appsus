@@ -4,7 +4,6 @@ export default {
     props: ['mails'],
     template: `
     <section class="email-list flex column">
-        <!-- <h2>List</h2> -->
         <ul class="clean-list">
         <li v-for="currMail in mails" :key="currMail.id" >
            <email-preview @mailRemove="load" :mail="currMail"/>

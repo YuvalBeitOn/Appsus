@@ -24,7 +24,6 @@ export default {
   },
   created() {
     this.isMobile = (window.innerWidth <800) ? true : false;
-    console.log( 'mobile:',this.isMobile);
 
   },
   methods: {

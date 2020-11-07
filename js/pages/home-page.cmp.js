@@ -94,13 +94,13 @@ AppSus' Books-shop offers a big variety of books to purchase in a comfortable pl
 <h2 class="flex justify-center">Our Team</h2>
 <section class="our-team container flex row justify-center align-center">
     <div class="box-team flex column justify-center align-center wrap">
-<!-- <img src="../../assets/imgs/team/team-guy.png" class="image-team"  alt=""> -->
+<img src="../../assets/imgs/team/team-orel.jpg" class="image-team"  alt="">
     <h2 class="title-box title-team">Orel Vaizman</h2>
-    <p class="text-box text-team">Lorem Ipsum Dolar Smit</p>
+    <p class="text-box text-team">22 years old from Kiryat-Gat, Israel. Tech-Lover ever since was youth. Crypto-Currency Investor, and a future web-developer</p>
     <ul class="social-icons clean-list flex justify-center">
-<li class="team-icon-social"><a href="https://www.facebook.com/Guy.Indepurker"><i class="item-social fab fa-facebook-f"></i></a></li>
-<li class="team-icon-social"><a href="https://www.linkedin.com/in/guy-indepurker-5778091a4/"><i class="item-social fab fa-linkedin-in"></i></a></li>
-<li class="team-icon-social"><a href="https://github.com/guyindepurker"><i class="item-social fab fa-github"></i></a></li>
+<li class="team-icon-social"><a href="https://www.facebook.com/OrelVaizman"><i class="item-social fab fa-facebook-f"></i></a></li>
+<li class="team-icon-social"><a href="https://www.linkedin.com/in/orel-vaizman-723a94122/"><i class="item-social fab fa-linkedin-in"></i></a></li>
+<li class="team-icon-social"><a href="https://github.com/OrelVaizman/"><i class="item-social fab fa-github"></i></a></li>
 </ul>
     </div>
     <div class="box-team flex column justify-center align-center wrap">

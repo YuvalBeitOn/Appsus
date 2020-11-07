@@ -49,6 +49,9 @@ export default {
       })
     },
   },
+  // created(){
+  //   console.log(this.$route)
+  // },
   destroyed() {
     // console.log(this.isSubmitted)
     if (this.isSubmitted) {

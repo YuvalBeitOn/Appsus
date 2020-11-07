@@ -33,7 +33,7 @@ function createNotes() {
             "isPinned": true,
             "info": {
                 "txt": 'Asi we need you',
-                "url": "/assets/imgs/hero.jpg"
+                "url": "./assets/imgs/hero.jpg"
             },
             "bgc": 'rgb(232, 234, 237)',
         },

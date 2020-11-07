@@ -1,20 +1,21 @@
-@import "/assets/";
+@import "./assets/";
 @import "./assets/helpers.css";
 @import "./assets/base.css";
-@import "/css/cmps-global/app-footer.css";
-@import "/css/cmps-global/app-header.css";
-@import "/css/cmps-global/user-msg.css";
-@import "/css/cmps-global/home-page.css";
-@import "/css/cmps-global/long-text.css";
-@import "/css/cmps-global/home-info-cards.css";
+@import "./css/cmps-global/app-footer.css";
+@import "./css/cmps-global/app-header.css";
+@import "./css/cmps-global/user-msg.css";
+@import "./css/cmps-global/home-page.css";
+@import "./css/cmps-global/long-text.css";
+@import "./css/cmps-global/home-info-cards.css";
 
 /* Email app */
 
-@import "/css/apps/email/email-main.css";
+@import "./css/apps/email/email-main.css";
 
 /*  keep app*/
-
-@import "/css/apps/keep/keep-main.css";
+@import "./css/apps/keep/keep-main.css";
+/* @import "/css/apps/keep/keep-main.css"; */
 
 /* Bokk app */
 @import "./apps/book/cmps/main-book-cmps.css";
+

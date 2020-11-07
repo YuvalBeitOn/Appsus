@@ -101,6 +101,16 @@ function createNotes() {
             "bgc": 'rgb(232, 234, 237)',
         },
         {
+            "type": "imgNote",
+            "id": utilService.makeId(),
+            "isPinned": true,
+            "info": {
+                "txt": 'Buy iPhone 12',
+                "url": "https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2020/08/apple-iphone-12-everythingapplepro-1598604949.jpg"
+            },
+            "bgc": 'rgb(232, 234, 237)',
+        },
+        {
             "type": 'videoNote',
             "id": utilService.makeId(),
             "isPinned": true,
@@ -141,15 +151,6 @@ function createNotes() {
             "isPinned": true,
             "info": {
                 txt: `It will be worth it in the end...`
-            },
-            "bgc": 'rgb(232, 234, 237)',
-        },
-        {
-            "type": 'textNote',
-            "id": utilService.makeId(),
-            "isPinned": true,
-            "info": {
-                txt: `here are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. `
             },
             "bgc": 'rgb(232, 234, 237)',
         },

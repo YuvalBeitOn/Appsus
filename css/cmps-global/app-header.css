@@ -1,20 +1,42 @@
 .app-header{
-    background-color: rgb(90, 187, 194);
+    background-color:#F8F9FA;
+    /* background-color: rgb(90, 187, 194); */
     color: white;
     padding: 10px;
+    border-bottom: 1px solid lightgrey;
 }
 .main-nav *{
 margin-right: 0.3125rem;
 }
-.main-nav a:hover{
-    color: white;
+.logo-svg{
+    width: 3.125rem;
+}
+.main-nav .nav-icon-header:hover{
+    color: #cad5e8 ;
+  
 }
 .logo{
     font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     text-transform: capitalize;
+    color:#202224;
 }
-.app-header .router-link-active {
-    color: rgb(210, 218, 208);
+.word-blue{
+    color:#4B8AF4;
+}
+.word-red{
+    color:#DF5347;
+}
+.word-yellow{
+    color:#FFCE42;
+}
+.word-green{
+    color:#18A360
+}
+.app-header .nav-icon-header{
+    font-size: 2rem;
+}
+.app-header a.router-link-active {
+    /* background-color: #E7F0FE; */
     font-weight: bolder;
   }

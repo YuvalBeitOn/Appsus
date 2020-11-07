@@ -1,13 +1,15 @@
+/* Jumbotron style */
 .home-page .jumbotron{
-    padding: 2rem 1rem;
+    padding: 2.5rem 1rem;
     margin-bottom: 2rem;
-    color: #e9ecef;
+    color: #202224;
     border-bottom-left-radius: .3rem;
     border-bottom-right-radius: .3rem;
-    background-color: #17a2b8!important;
+    background-color: #F8F9FA!important;
     font-weight: 300;
-    height: 350px;
+    height: 450px;
     width: 100vw;
+    margin-bottom:10rem ;
 }
 .title-home-page{
     font-size: 2.8rem;
@@ -20,15 +22,50 @@
     margin-top: 2.5rem;
 }
 .btn-home{
-    color: #343a40;
-    border-color: #343a40;
-    padding: 10px 20px;
-    border-radius: 25px;
+    background-color: #fff;
+    color: #1a73e8;
+    border: 1px solid #dadce0;
+    padding: 15px 20px;
+    border-radius: 5px;
     transition-duration: 0.3s;
     margin: 5px;
 }
 .btn-home:hover{
-    border-color: #343a40;
-    background-color: #343a40;
-    color: whitesmoke;
+    border-color: #1a73e8;
+    background-color: #f4f8fe;
+ 
 }
+/* Features container */
+.our-features{
+    margin-bottom: 10rem;
+}
+.features-container{
+    margin-bottom: 5rem;
+}
+.why-us-title{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.box-features{
+    border: 1px solid #D9DCDF;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 0.3125rem;
+}
+.title-box{
+    color:#202224;
+}
+.text-box{
+    text-align: center;
+    color:#5F6367;
+}
+
+.box-features>*{
+    margin-bottom: 0.4125rem;
+
+}
+.box-features .icon-box{
+    font-size: 3rem;
+}
+/* Containers INFO */
+/* Mail */

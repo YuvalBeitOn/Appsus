@@ -3,7 +3,7 @@ export default {
     template: `
       <section>
         <p>{{textToShow}}</p>
-        <button v-if="txt.length > 100" class="show-more-btn" @click="isShowAll = !isShowAll">{{buttonTxt}}</button>
+        <button v-if="txt.length > 100" class="show-more-btn" @click.stop="isShowAll = !isShowAll">{{buttonTxt}}</button>
       </section>
       `,
     data() {

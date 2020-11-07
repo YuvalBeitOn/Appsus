@@ -33,14 +33,14 @@ It uses utility classes for typography and spacing to space content out within t
 <div class="box-features flex column wrap justify-center align-center">
 <i class="icon-box word-yellow fas fa-sticky-note"></i>
 <h3 class="title-box ">Keep</h3>
-<p class="text-box">Quickly capture what's on your mind and share those thoughts with friends and family. Save your note and your ideas in one powerful app! </p>
+<p class="text-box">Save your note and your ides in one app! now you can save all the things you need to do or impotent things and just write its powerful tool!</p>
 <router-link to="/keep" exact><button class="btn-home">Learn More</button>
 </router-link>
 </div>
 <div class="box-features flex column wrap justify-center align-center">
 <i class="icon-box word-green fas fa-book"></i>
 <h3 class="title-box">Books</h3>
-<p class="text-box">Save your favorite books! now you can save all the books that you love and looking for new books!</p>
+<p class="text-box">Save your favorite books!now you can save all the books that you love and looking for new books!</p>
 <router-link to="/book" exact><button class="btn-home">Learn More</button>
 </router-link>
 </div>
@@ -59,13 +59,13 @@ Quickly filter and search for notes by color and other attributes like lists wit
 <router-link to="/keep" exact><button class="btn-home">Learn More</button>
 </router-link>
 </div>
-<img src="./assets/imgs/mocupkeep.jpg" class="image-info"  alt="">
+<img src="../../assets/imgs/mocupkeep.jpg" class="image-info"  alt="">
 </div>
 </div>
 
 <div class="box-info mail-info">
 <div class="info-container container flex wrap">
-<img src="./assets/imgs/mocupkeep.jpg" class="image-info"  alt="">
+<img src="../../assets/imgs/mocupkeep.jpg" class="image-info"  alt="">
 <div class="info-content flex column justify-center align-center">
     <h2 class="title-box title-info">Send your mail, wherever you are</h2>
     <p class="text-box text-info">
@@ -87,7 +87,7 @@ Quickly filter and search for notes by color and other attributes like lists wit
 <router-link to="/book" exact><button class="btn-home">Learn More</button>
 </router-link>
 </div>
-<img src="./assets/imgs/mocupkeep.jpg" class="image-info"  alt="">
+<img src="../../assets/imgs/mocupkeep.jpg" class="image-info"  alt="">
 
 </div>
 </div>
@@ -95,7 +95,7 @@ Quickly filter and search for notes by color and other attributes like lists wit
 <h2 class="flex justify-center">Our Team</h2>
 <section class="our-team container flex row justify-center align-center">
     <div class="box-team flex column justify-center align-center wrap">
-<img src="./assets/imgs/team/team-guy.png" class="image-team"  alt="">
+<!-- <img src="../../assets/imgs/team/team-guy.png" class="image-team"  alt=""> -->
     <h2 class="title-box title-team">Name Name</h2>
     <p class="text-box text-team">Lorem Ipsum Dolar Smit</p>
     <ul class="social-icons clean-list flex justify-center">
@@ -105,7 +105,7 @@ Quickly filter and search for notes by color and other attributes like lists wit
 </ul>
     </div>
     <div class="box-team flex column justify-center align-center wrap">
-<!-- <img src="./assets/imgs/team/team-guy.png" class="image-team"  alt=""> -->
+<!-- <img src="../../assets/imgs/team/team-guy.png" class="image-team"  alt=""> -->
     <h2 class="title-box title-team">Name Name</h2>
     <p class="text-box text-team">Lorem Ipsum Dolar Smit</p>
     <ul class="social-icons clean-list flex justify-center">
@@ -115,7 +115,7 @@ Quickly filter and search for notes by color and other attributes like lists wit
 </ul>
     </div>
     <div class="box-team flex column justify-center align-center wrap">
-<!-- <img src="./assets/imgs/team/team-guy.png" class="image-team"  alt=""> -->
+<!-- <img src="../../assets/imgs/team/team-guy.png" class="image-team"  alt=""> -->
     <h2 class="title-box title-team">Name</h2>
     <p class="text-box text-team">Lorem Ipsum Dolar Smit</p>
     <ul class="social-icons clean-list flex justify-center">

@@ -14,7 +14,8 @@ export default {
     editNote,
     sendNote,
     getNoteTypeById,
-    updateNote
+    updateNote,
+    getNoteById
 }
 
 function createNotes() {
@@ -155,6 +156,11 @@ function createNotes() {
     ]
     utilService.storeToStorage(STORAGE_KEY, notes);
     return notes;
+}
+
+function getNoteById(noteId) {
+    const note = notes.find(note => note.id === noteId);
+    return Promise.resolve(note);
 }
 
 function getNoteTypeById(noteId) {

@@ -9,49 +9,49 @@ import bookAdd from './apps/books/pages/add-book.cmp.js'
 import emailList from './apps/email/cmps/email-list.cmp.js'
 
 const myRoutes = [{
-    path: '/',
-    component: homePage
-},
-{
-    path: '/email/compose/',
-    component: emailCompose
-},
-{
-    path: '/book',
-    component: bookApp,
-},
-{
-    path: '/book/add',
-    component: bookAdd,
-},
-
-{
-    path: '/book/:bookId',
-    component: bookDetails
-},
-
-{
-    path: '/email/:mailsCategory',
-    component: emailApp
-},
-{
-    path: '/email',
-    component: emailApp,
-    children: [{
-        path: '/email/:mailsCategory',
-        component: emailList
+        path: '/',
+        component: homePage
     },
     {
-        path: '/email/:mailsCategory/:mailId',
-        component: emailDetails
-    }
-    ]
-},
+        path: '/email/compose/',
+        component: emailCompose
+    },
+    {
+        path: '/book',
+        component: bookApp,
+    },
+    {
+        path: '/book/add',
+        component: bookAdd,
+    },
 
-{
-    path: '/keep',
-    component: keepApp
-},
+    {
+        path: '/book/:bookId',
+        component: bookDetails
+    },
+
+    {
+        path: '/email/:mailsCategory',
+        component: emailApp
+    },
+    {
+        path: '/email/:noteId?',
+        component: emailApp,
+        children: [{
+                path: '/email/:mailsCategory',
+                component: emailList
+            },
+            {
+                path: '/email/:mailsCategory/:mailId',
+                component: emailDetails
+            }
+        ]
+    },
+
+    {
+        path: '/keep',
+        component: keepApp
+    },
 
 
 ]

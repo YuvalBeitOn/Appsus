@@ -53,6 +53,10 @@
     color: #202124;
 }
 
+.list-title {
+    color: #949494;
+}
+
 @media (max-width: 1100px) {
     .add-note input,
     .fa-icon {

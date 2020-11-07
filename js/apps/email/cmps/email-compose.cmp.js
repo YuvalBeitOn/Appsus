@@ -16,6 +16,7 @@ export default {
                </form>
             </section>
       `,
+  props: ['mail'],
   data() {
     return {
       composeMsg: {
@@ -49,11 +50,16 @@ export default {
       })
     },
   },
-  // created(){
-  //   console.log(this.$route)
-  // },
+  created() {
+    if (this.mail) {
+      const { senderMail, subject, body } = this.mail
+      this.composeMsg.to = senderMail;
+      this.composeMsg.subject = subject;
+      this.composeMsg.body = body;
+    }
+
+  },
   destroyed() {
-    // console.log(this.isSubmitted)
     if (this.isSubmitted) {
       return;
     } else {

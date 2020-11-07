@@ -6,9 +6,7 @@ export default {
     <section class= "add-note flex justify-center">
         <form class="add-note-container"  @keydown.enter.prevent="addNote">
             <input v-model="currNote.info.txt" type="text" :placeholder="getPlaceHolder">
-            <transition name="expend">
                 <input class="url-input" v-if="showSecondInput" v-model="currNote.info.url" type="text" placeholder="Enter url...">
-            </transition>
             <div class="add-note-btns">
                 <button @click.prevent="handleNoteType('textNote')"><i :class="markText" class="fas fa-font fa-icon"></i></button>
                 <button @click.prevent="handleNoteType('todoNote')"><i :class="markTodo" class="fas fa-th-list fa-icon"></i></button>

@@ -12,7 +12,7 @@ export default {
             <router-link to="/" exact><i class="nav-icon-header fas fa-home"></i></router-link>
             <router-link to="/email/inbox" exact><i class="nav-icon-header word-red fas fa-envelope"></i></router-link>
             <router-link to="/keep" exact><i class="nav-icon-header word-yellow fas fa-sticky-note"></i></router-link>
-            <router-link to="/books" exact><i class="nav-icon-header word-green fas fa-book"></i></router-link>
+            <router-link to="/book" exact><i class="nav-icon-header word-green fas fa-book"></i></router-link>
         </nav>
         </div>
     </header>

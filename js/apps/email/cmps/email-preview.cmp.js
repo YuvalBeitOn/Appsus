@@ -15,7 +15,7 @@ export default {
            <div class="email-sender" :class="readState">{{mail.sender}}</div>
            <div class="email-subject" :class="readState">{{mail.subject}} - </div>
            <div class="email-body">{{textToShow}}</div>
-           <div class="email-date align-self-end" :class="readState">{{dateToShow}}</div>
+           <div class="email-date" :class="readState">{{dateToShow}}</div>
         </section>
         <!-- </router-link> -->
     `,

@@ -1,9 +1,11 @@
+import { utilService } from "../../../services/util.service.js"
 
 export default {
     name: 'nav-bar-email',
     template: `
+    <!-- <i @click="openNavBar" class="btn-hamburger nav-hm fas fa-bars"></i> -->
     <section class="nav-bar-email">
-    <div class="container-controls-nav flex column wrap">
+    <div  class="container-controls-nav flex column wrap">
     <div @click="openCompose" class="compose-container mb-5 flex column  align-center"><span class="title-compose">Compose</span><img class="compos-icon ml-5" src="assets/imgs/compose.png"></div>
             <router-link class="link-nav" to="/email/inbox" exact><i class="nav-icon-header fas fa-inbox"></i><span class="ml-5">Inbox</span></router-link>
             <router-link class="link-nav" to="/email/all" exact><i class="nav-icon-header fas fa-envelope"></i><span class="ml-5">All Mails</span></router-link>
@@ -15,6 +17,9 @@ export default {
     </section>
     `,
     methods:{
+        openNavBar(){
+            utilService.toggleNavMail();
+        },
         openCompose(){
             this.$emit('open-compose')
         }

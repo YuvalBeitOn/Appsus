@@ -85,3 +85,10 @@
   .green {
     color: rgb(99, 169, 99);
   }
+  .btn-hamburger{
+      font-size: 2rem;
+      cursor: pointer;
+  }
+  .open-nav{
+      display: block;
+  }

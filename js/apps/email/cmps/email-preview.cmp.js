@@ -4,8 +4,6 @@ import { eventBus } from '../../../services/event-bus-service.js'
 export default {
     props: ['mail'],
     template: `
-        <!-- <router-link :to="'/email/'+mailsCategory+'/'+mail.id">   -->
-        <!-- <router-link :to="mailLink"> -->
         <section @click="mailClicked" class="email-preview flex" :class="sectionState">
             <section v-if="isSelected" class="email-buttons">
             <i @click.prevent.stop="onRemoveMail(mail.id)" class="fas fa-trash ml-5"></i>
@@ -17,7 +15,6 @@ export default {
            <div class="email-body">{{textToShow}}</div>
            <div class="email-date align-self-end" :class="readState">{{dateToShow}}</div>
         </section>
-        <!-- </router-link> -->
     `,
     data() {
         return {
@@ -44,7 +41,8 @@ export default {
             if (!this.mail.isDraft) {
                 this.$router.push(`/email/${this.mailsCategory}/${this.mail.id}`)
             } else {
-                this.$router.push(`/email/q?subject=${this.mail.subject}&body=${this.mail.body}`)
+                eventBus.$emit('editDraft', this.mail)
+                // console.log('I am a draft')
             }
         },
     },
@@ -66,11 +64,6 @@ export default {
             const dayAgo = currentDate - (3600000 * 24)
             return (this.mail.sentAt <= dayAgo) ? new Date(this.mail.sentAt).toISOString().substr(0, 10) : new Date(this.mail.sentAt).toLocaleTimeString().substring(0, 5)
         },
-        // mailLink() {
-        //     if (!this.mail.isDraft) return `/email/${this.mailsCategory}/${this.mail.id}`
-        //     // if (this.mail.isDraft) return `/email/${this.mailsCategory}/${this.mail.id}`
-        //     if (this.mail.isDraft) return `/email/compose/${this.mail.id}`
-        // }
     },
 
     components: {

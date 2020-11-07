@@ -118,28 +118,32 @@ function _createMails() {
   );
   gMails.push(
     createMail(
-      "Tomer aviv",
-      "lamalo@gmail.com",
-      "I going to us tomorrow ",
-      utilService.makeLorem(10),
+      "Check Point Security",
+      "no-reply@csa-challenge.com",
+      "Confirm your account for Check Point Security Academy 2020‏",
+      `Thanks for signing up to the Check Point Security Academy website.
+      On our website you can find all the information you need about our upcoming course and the challenges that you need to solve to join our class of 2020 and become the ultimate ninja.
+      Do you think you have what it takes? Come and show us!
+      `,
       Math.random() >= 0.65
     )
   );
   gMails.push(
     createMail(
-      "Niv Shamsi",
-      "niv-shamsi@gmail.com",
+      "Pinterest‏",
+      "confirm@account.pinterest.com",
       "I am in israel",
-      utilService.makeLorem(10),
+      `Please take a second to make sure we’ve got your email right. Didn’t sign up for Pinterest?
+      `,
       Math.random() >= 0.65
     )
   );
   gMails.push(
     createMail(
-      "Barel Zrian",
-      "Barel-zrian@gmail.com",
-      "Blitz digital come to us",
-      utilService.makeLorem(10),
+      "AliExpress",
+      "transaction@notice.aliexpress.com‏",
+      "Order 8120198035236134 is good to go!",
+      `The payment for order 8120198035236134 has been confirmed! We'll let you know when your order ships. You can also sign in to AliExpress to see more details.`,
       Math.random() >= 0.65
     )
   );

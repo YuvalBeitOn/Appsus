@@ -62,22 +62,20 @@
 /* Ul */
 
 .clean-list {
-<<<<<<< HEAD
   list-style-type: none;
   margin: 0;
   padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
 }
 .container{
   max-width: 1140px;
   margin: 0 auto;
-=======
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-    padding-inline-start: 0;
->>>>>>> 62a715e670bf8f925d2231ae3a04662229878475
+
 }

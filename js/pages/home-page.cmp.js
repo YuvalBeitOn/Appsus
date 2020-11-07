@@ -116,7 +116,7 @@ Quickly filter and search for notes by color and other attributes like lists wit
     </div>
     <div class="box-team flex column justify-center align-center wrap">
 <!-- <img src="../../assets/imgs/team/team-guy.png" class="image-team"  alt=""> -->
-    <h2 class="title-box title-team">Name Name</h2>
+    <h2 class="title-box title-team">Name</h2>
     <p class="text-box text-team">Lorem Ipsum Dolar Smit</p>
     <ul class="social-icons clean-list flex justify-center">
 <li class="team-icon-social"><a href="https://www.facebook.com/Guy.Indepurker"><i class="item-social fab fa-facebook-f"></i></a></li>

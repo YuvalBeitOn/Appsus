@@ -69,10 +69,18 @@ export default {
     })
   }, watch: {
     '$route.params.mailsCategory'() {
-      this.mailsCategory = this.$route.params.mailsCategory
-      emailService.getMails(this.mailsCategory).then((mails) => {
-        this.mails = mails;
-      })
+      if (this.$route.query.subject) {
+        return
+      } else {
+        this.mailsCategory = this.$route.params.mailsCategory
+        emailService.getMails(this.mailsCategory).then((mails) => {
+          this.mails = mails;
+        })
+      }
+    },
+    '$route.query.subject'() {
+      console.log(this.$route.query.subject,this.$route.query.body)
+      this.isComposeOpen = true;
     }
   },
   components: {

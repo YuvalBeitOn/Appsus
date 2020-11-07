@@ -7,9 +7,9 @@ export default {
     template: `
     <section class="notes-gallery">
         <filter-notes @setFilter="setFilter"/>  
-        <h2 class="list-title"> Pinned notes</h2>
+        <h3 class="list-title"> Pinned notes</h3>
         <notes-list  :notes="pinnedNotes"/> 
-        <h2 class="list-title"> Other notes</h2>
+        <h3 class="list-title"> Other notes</h3>
         <notes-list  :notes="unPinnedNotes"/>
     </section>
     `,

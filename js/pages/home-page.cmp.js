@@ -3,10 +3,10 @@ export default {
     <section class="home-page ">
     <div class="jumbotron ">
         <div class="container flex column  wrap align-center">
-        <h1 class="title-home-page">Home Sweet Home</h1>
-        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
-
-It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <h1 class="title-home-page">AppSus</h1>
+        <p>
+        Make your life easier with AppSus' Email, Keep and Books services!
+        </p>
 
 <div class="controls-btn">
             <router-link to="/email/inbox" exact><button class="btn-home">Email</button></router-link>
@@ -26,21 +26,21 @@ It uses utility classes for typography and spacing to space content out within t
 <div class="box-features flex column wrap justify-center align-center">
 <i class="icon-box word-red fas fa-envelope"></i>
 <h3 class="title-box">Mail-Box</h3>
-<p class="text-box">Send Mail is much more easier! now you can send mail fast you can drem!</p>
+<p class="text-box">AppSus Email-service' offers the most fast and qualified Email-Services these days, makes it easier for you to manage your emails.</p>
 <router-link to="/email/inbox" exact><button class="btn-home">Learn More</button>
 </router-link>
 </div>
 <div class="box-features flex column wrap justify-center align-center">
 <i class="icon-box word-yellow fas fa-sticky-note"></i>
 <h3 class="title-box ">Keep</h3>
-<p class="text-box">Save your note and your ides in one app! now you can save all the things you need to do or impotent things and just write its powerful tool!</p>
+<p class="text-box">Manage your thoughts, and lists with AppSus' Keep-Service, our service supports videos and pictures to be kept.</p>
 <router-link to="/keep" exact><button class="btn-home">Learn More</button>
 </router-link>
 </div>
 <div class="box-features flex column wrap justify-center align-center">
 <i class="icon-box word-green fas fa-book"></i>
 <h3 class="title-box">Books</h3>
-<p class="text-box">Save your favorite books!now you can save all the books that you love and looking for new books!</p>
+<p class="text-box">Manage your books with AppSus' Books-Service!</p>
 <router-link to="/book" exact><button class="btn-home">Learn More</button>
 </router-link>
 </div>
@@ -54,7 +54,7 @@ It uses utility classes for typography and spacing to space content out within t
 <div class="info-content flex column justify-center align-center">
     <h2 class="title-box title-info">Save your thoughts, wherever you are</h2>
     <p class="text-box text-info">
-Quickly filter and search for notes by color and other attributes like lists with images, audio notes with reminders or just see shared notes. Find what you're looking for even faster, and let Keep do the remembering for you.
+Quickly store your notes, lists, favourite images and videos. Find what you're looking for even faster, and let Keep do the storaging for you.
 </p>
 <router-link to="/keep" exact><button class="btn-home">Learn More</button>
 </router-link>
@@ -69,7 +69,7 @@ Quickly filter and search for notes by color and other attributes like lists wit
 <div class="info-content flex column justify-center align-center">
     <h2 class="title-box title-info">Send your mail, wherever you are</h2>
     <p class="text-box text-info">
-Quickly filter and search for notes by color and other attributes like lists with images, audio notes with reminders or just see shared notes. Find what you're looking for even faster, and let Keep do the remembering for you.
+The most qualified email-services these days to submit and receive e-mails. Appsus' email-services will make managing your e-mails much easier.
 </p>
 <router-link to="/email/inbox" exact><button class="btn-home">Learn More</button>
 </router-link>
@@ -80,10 +80,9 @@ Quickly filter and search for notes by color and other attributes like lists wit
 <div class="box-info book-info">
 <div class="info-container container flex wrap">
 <div class="info-content flex column justify-center align-center">
-    <h2 class="title-box title-info">Save your Books, wherever you are</h2>
+    <h2 class="title-box title-info">Shop your books, wherever you are</h2>
     <p class="text-box text-info">
-Quickly filter and search for notes by color and other attributes like lists with images, audio notes with reminders or just see shared notes. Find what you're looking for even faster, and let Keep do the remembering for you.
-</p>
+AppSus' Books-shop offers a big variety of books to purchase in a comfortable place. You can also search for your books all around the world, and find the required details.</p>
 <router-link to="/book" exact><button class="btn-home">Learn More</button>
 </router-link>
 </div>
@@ -96,7 +95,7 @@ Quickly filter and search for notes by color and other attributes like lists wit
 <section class="our-team container flex row justify-center align-center">
     <div class="box-team flex column justify-center align-center wrap">
 <!-- <img src="../../assets/imgs/team/team-guy.png" class="image-team"  alt=""> -->
-    <h2 class="title-box title-team">Name Name</h2>
+    <h2 class="title-box title-team">Orel Vaizman</h2>
     <p class="text-box text-team">Lorem Ipsum Dolar Smit</p>
     <ul class="social-icons clean-list flex justify-center">
 <li class="team-icon-social"><a href="https://www.facebook.com/Guy.Indepurker"><i class="item-social fab fa-facebook-f"></i></a></li>
@@ -106,7 +105,7 @@ Quickly filter and search for notes by color and other attributes like lists wit
     </div>
     <div class="box-team flex column justify-center align-center wrap">
 <!-- <img src="../../assets/imgs/team/team-guy.png" class="image-team"  alt=""> -->
-    <h2 class="title-box title-team">Name Name</h2>
+    <h2 class="title-box title-team">Yuval Beiton</h2>
     <p class="text-box text-team">Lorem Ipsum Dolar Smit</p>
     <ul class="social-icons clean-list flex justify-center">
 <li class="team-icon-social"><a href="https://www.facebook.com/Guy.Indepurker"><i class="item-social fab fa-facebook-f"></i></a></li>
@@ -116,7 +115,7 @@ Quickly filter and search for notes by color and other attributes like lists wit
     </div>
     <div class="box-team flex column justify-center align-center wrap">
 <!-- <img src="../../assets/imgs/team/team-guy.png" class="image-team"  alt=""> -->
-    <h2 class="title-box title-team">Name</h2>
+    <h2 class="title-box title-team">Guy Indepurker</h2>
     <p class="text-box text-team">Lorem Ipsum Dolar Smit</p>
     <ul class="social-icons clean-list flex justify-center">
 <li class="team-icon-social"><a href="https://www.facebook.com/Guy.Indepurker"><i class="item-social fab fa-facebook-f"></i></a></li>

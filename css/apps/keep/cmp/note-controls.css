@@ -1,4 +1,6 @@
 .note-controls {
+    display: flex;
+    align-self: center;
     margin-top: 1rem;
     position: absolute;
     bottom: 0;

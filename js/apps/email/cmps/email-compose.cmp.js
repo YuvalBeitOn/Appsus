@@ -3,16 +3,18 @@ import { eventBus } from '../../../services/event-bus-service.js'
 export default {
   name: "email-compose",
   template: `
-             <section class="email-compose compose-form flex column wrap align-center">
+            <section class="email-compose compose-form flex column wrap align-center">
+               <form @submit="submitMessage">
                   <div class="header-compose">
                   <button class="btn-close" @click="closeCompose">X</button>
                   </div>
-                  <input type="text"  placeholder="To:" v-model.trim="composeMsg.to" required>
-                  <input type="text" placeholder="Subject"  v-model.trim="composeMsg.subject" >
+                  <input type="text" placeholder="To:" v-model.trim="composeMsg.to" required/>
+                  <input type="text" placeholder="Subject"  v-model.trim="composeMsg.subject"/>
                   <textarea id="message" v-model="composeMsg.body" placeholder="Enter Your msg" name="compose-msg" rows="4" cols="50" >
-                 </textarea>
-                 <button @click="sendMsg" class="send-compose">Send Massage</button>
-                  </section>
+                  </textarea>
+                  <button class="send-compose">Send Massage</button>
+               </form>
+            </section>
       `,
   data() {
     return {
@@ -21,7 +23,7 @@ export default {
         subject: "",
         body: "",
       },
-      // isSendMsg: false,
+      isSubmitted: false
     }
   },
   methods: {
@@ -33,18 +35,26 @@ export default {
     closeCompose() {
       this.$emit('close-compose')
     },
-    sendMsg() {
-      const depCopyMsg = JSON.parse(JSON.stringify(this.composeMsg))
-      const newMail = emailService.createMail('Me', depCopyMsg.to, depCopyMsg.subject, depCopyMsg.body)
-      emailService.sendMail(newMail).then(() => {
-        eventBus.$emit("show-msg", { txt: 'Your Message has sent!', type: 'alert-success' })
+    submitMessage() {
+      this.isSubmitted = true;
+      this.sendMsg()
+    },
+    sendMsg(isDraft = false) {
+      const clonedMessage = JSON.parse(JSON.stringify(this.composeMsg))
+      const newMail = emailService.createMail('Me', clonedMessage.to, clonedMessage.subject, clonedMessage.body)
+      emailService.sendMail(newMail, isDraft).then(() => {
+        eventBus.$emit("show-msg", { txt: 'Your message was sent successfuly!', type: 'alert-success' })
         this.getEmptyCell()
-
         this.$emit('close-compose')
       })
     },
   },
-  // created() {
-  //   eventBus.$on('compose-Msg', isSend => this.isSendMsg = isSend)
-  // }
+  destroyed() {
+    // console.log(this.isSubmitted)
+    if (this.isSubmitted) {
+      return;
+    } else {
+      this.sendMsg(true)
+    }
+  }
 };

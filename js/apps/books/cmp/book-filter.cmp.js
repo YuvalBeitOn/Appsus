@@ -13,6 +13,7 @@ export default {
             <input type="range" max="200" name="price-to" value="Infinity" v-model.number="filterBy.toPrice" >{{txtToPrice}}
           </label>
           <button>Apply Changes</button>
+          <button @click.stop="addBook" type="add-book">Add New book</button>
         </form>
 </section>
     `,
@@ -29,6 +30,9 @@ export default {
     emitFilter() {
       this.$emit("filtered", JSON.parse(JSON.stringify(this.filterBy)));
     },
+    addBook(){
+      this.$router.push('book/add')
+    }
   },
   computed: {
     txtToPrice() {

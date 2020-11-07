@@ -56,3 +56,24 @@
     strong{
       margin-right: 5px;
     }
+
+    @media (max-width:800px){
+      .book-details-container{
+        flex-flow: column-reverse wrap;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    @media (max-width:500px){
+      #review-text{
+        width: 100%;
+      }
+      .reviews input[type="text"]{
+        width: 100%;
+        border: none;
+        padding: 0.3125rem;
+      }
+      .reviews input[type="date"]{
+        width: 100%;
+      }
+    }

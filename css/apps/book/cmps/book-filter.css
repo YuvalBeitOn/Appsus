@@ -6,7 +6,7 @@
   }
 
   .book-filter .book-controls {
-    max-height: 100px;
+    min-height: 50px;
   }
   .book-filter .book-controls * {
     margin-right: 10px;

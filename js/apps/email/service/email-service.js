@@ -62,10 +62,13 @@ function _createMails() {
   gMails = [];
   gMails.push(
     createMail(
-      "Guy",
-      "guy235@gmail.com",
-      "Sprint 3 is On!",
-      utilService.makeLorem(15)
+      "Orel Vaizman",
+      "oraelv@gmail.com",
+      "AppSus Meeting",
+      `Dear team-members,
+      I would like to set a meet-up at 3 o'clock
+      `
+      
     )
   );
   gMails.push(

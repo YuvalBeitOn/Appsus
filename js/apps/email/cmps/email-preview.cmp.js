@@ -11,7 +11,7 @@ export default {
             <i @click.prevent.stop="onRemoveMail(mail.id)" class="fas fa-trash ml-5"></i>
             </section>
             <input @click.stop type="checkbox" v-model="isSelected"/>
-            <i @click.prevent.stop="onStarClicked" class="fas fa-star mr-5 ml-5 " :class="starClass"></i>
+            <i @click.prevent.stop="onStarClicked" class="star fas fa-star mr-5 ml-5 " :class="starClass"></i>
            <div class="email-sender" :class="readState">{{mail.sender}}</div>
            <div class="email-subject" :class="readState">{{mail.subject}} - </div>
            <div class="email-body">{{textToShow}}</div>

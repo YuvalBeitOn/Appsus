@@ -1,3 +1,7 @@
 .email-list li {
     list-style: none;
 }
+
+.email-list{
+    min-width: 62.5rem;
+}

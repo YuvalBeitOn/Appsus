@@ -49,8 +49,10 @@
 .box-features{
     border: 1px solid #D9DCDF;
     border-radius: 5px;
-    padding: 1rem;
+    padding: 1.5rem;
     margin: 0.3125rem;
+    max-width: 21.875rem;
+    min-height: 21.875rem;
 }
 .title-box{
     color:#202224;
@@ -69,3 +71,15 @@
 }
 /* Containers INFO */
 /* Mail */
+@media (max-width:910px){
+    .why-us-container{
+        flex-flow: column wrap;
+    }
+    .box-features{
+        max-width: 80%;
+    }
+    .box-features .btn-home{
+        margin-top: 3rem;
+    }
+
+}

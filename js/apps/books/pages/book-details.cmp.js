@@ -20,7 +20,7 @@ export default {
       </section>
       <img :src="imgUrl" class="img-book-details"/> 
       </section>
-      <img v-if="isSale" src="../../../../assets/imgs/sale.png" class="sale-desc-img"> 
+      <img v-if="isSale" src="assets/imgs/sale.png" class="sale-desc-img"> 
       <show-reviews  @reviews='loadBook' :reviews="book.reviews" :bookId="book.id"></show-reviews>
       <add-reviews  :book="book"> </add-reviews>
       <button @click="goBack" class="btn-close mr-5">Go Back</button>

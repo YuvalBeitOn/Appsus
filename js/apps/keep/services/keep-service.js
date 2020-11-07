@@ -169,18 +169,6 @@ function getNoteTypeById(noteId) {
     return note.type;
 }
 
-function sendNote(note) {
-    let messegeContent;
-    if (note.type === "textNote") messegeContent = note.info.txt;
-    else if (note.type === "todoNote") {
-        messegeContent = note.info.todos.map((todo, idx) => {
-            return `${idx}. ${todo.txt}\n`
-        }).join(',');
-    } else messegeContent = `${note.info.txt}: \n ${note.info.url}`;
-    console.log('messegeContent:', messegeContent);
-    // this.$router.push(`/email/compose/new?type=${this.note.type}&body=${messegeContent}&title=${'title'}`);
-}
-
 function editNote(noteId, newVal, idx) {
     const note = notes.find(note => note.id === noteId);
     if (note.type !== 'todoNote') note.info.txt = newVal;

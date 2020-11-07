@@ -78,3 +78,10 @@
   max-width: 1140px;
   margin: 0 auto;
 }
+
+.red {
+    color: brown;
+  }
+  .green {
+    color: rgb(99, 169, 99);
+  }

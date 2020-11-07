@@ -4,7 +4,6 @@ export default {
   name: "email-compose",
   template: `
             <section class="email-compose compose-form flex column wrap align-center">
-               <form>
                   <div class="header-compose">
                   <button class="btn-close" @click="closeCompose" type="button">X</button>
                   </div>
@@ -13,7 +12,6 @@ export default {
                   <textarea id="message" v-model="composeMsg.body" placeholder="Enter Your msg" name="compose-msg" rows="4" cols="50" >
                   </textarea>
                   <button class="send-compose" type="button" @click="submitMessage">Send Massage</button>
-               </form>
             </section>
       `,
   props: ['mail'],

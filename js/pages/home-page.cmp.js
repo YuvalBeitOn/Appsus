@@ -59,13 +59,13 @@ Quickly filter and search for notes by color and other attributes like lists wit
 <router-link to="/keep" exact><button class="btn-home">Learn More</button>
 </router-link>
 </div>
-<img src="../../assets/imgs/mocupkeep.jpg" class="image-info"  alt="">
+<img src="assets/imgs/mocupkeep.jpg" class="image-info"  alt="">
 </div>
 </div>
 
 <div class="box-info mail-info">
 <div class="info-container container flex wrap">
-<img src="../../assets/imgs/mocupkeep.jpg" class="image-info"  alt="">
+<img src="assets/imgs/mocupkeep.jpg" class="image-info"  alt="">
 <div class="info-content flex column justify-center align-center">
     <h2 class="title-box title-info">Send your mail, wherever you are</h2>
     <p class="text-box text-info">
@@ -87,7 +87,7 @@ Quickly filter and search for notes by color and other attributes like lists wit
 <router-link to="/book" exact><button class="btn-home">Learn More</button>
 </router-link>
 </div>
-<img src="../../assets/imgs/mocupkeep.jpg" class="image-info"  alt="">
+<img src="assets/imgs/mocupkeep.jpg" class="image-info"  alt="">
 
 </div>
 </div>

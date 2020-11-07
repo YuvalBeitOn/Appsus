@@ -7,7 +7,8 @@ export default {
     <section v-if="notes.length" class="notes-list-container">
         <ul class="notes-list clean-list ">
             <note-preview 
-                v-for="note in notes"  
+                v-for="note in notes"
+                :key="note.id"  
                 :note="note"
                 :editNote="editNote">
             </note-preview>

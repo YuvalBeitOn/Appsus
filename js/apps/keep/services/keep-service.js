@@ -12,7 +12,6 @@ export default {
     cloneNote,
     createNotes,
     editNote,
-    sendNote,
     getNoteTypeById,
     updateNote,
     getNoteById
@@ -216,7 +215,7 @@ function addNote(note) {
         });
     }
     note.id = utilService.makeId();
-    note.bgc = 'lightblue';
+    note.bgc = 'rgb(232, 234, 237)';
     notes.push(note);
     utilService.storeToStorage(STORAGE_KEY, notes);
     return Promise.resolve(note);

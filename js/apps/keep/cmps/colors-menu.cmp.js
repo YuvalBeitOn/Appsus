@@ -3,7 +3,7 @@ export default {
     template: `
     <section  class="colors-menu">
         <ul class="colors-container clean-list flex">
-            <li class="color" v-for="(color) in colors" :style="{backgroundColor:color}" @click="setBgc(color)"></li>
+            <li class="color" v-for="(color, idx) in colors" :key="idx" :style="{backgroundColor:color}" @click="setBgc(color)"></li>
         </ul>
     </section>`,
 

@@ -5,7 +5,7 @@ export default {
     props: ['mail'],
     template: `
         <!-- <router-link :to="'/email/'+mailsCategory+'/'+mail.id">   -->
-        <router-link :to="mailLink">  
+        <router-link :to="mailLink">
         <section class="email-preview flex" :class="sectionState">
             <section v-if="isSelected" class="email-buttons">
             <i @click.prevent.stop="onRemoveMail(mail.id)" class="fas fa-trash ml-5"></i>
@@ -61,8 +61,8 @@ export default {
         },
         mailLink() {
             if (!this.mail.isDraft) return `/email/${this.mailsCategory}/${this.mail.id}`
-            if (this.mail.isDraft) return `/email/${this.mailsCategory}/${this.mail.id}`
-            // if (this.mail.isDraft) return `/email/compose/${this.mail.id}`
+            // if (this.mail.isDraft) return `/email/${this.mailsCategory}/${this.mail.id}`
+            if (this.mail.isDraft) return `/email/compose/${this.mail.id}`
         }
 
     },

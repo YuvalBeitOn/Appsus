@@ -66,25 +66,23 @@ function _createMails() {
       "oraelv@gmail.com",
       "AppSus Meeting",
       `Dear team-members,
-      I would like to set a meet-up at 3 o'clock
-      `
-      
+      I would like to set a meet-up at 5 o'clock. We have four hours to go and this time we gonna take the briefcase!`
     )
   );
   gMails.push(
     createMail(
-      "Yaron biton",
-      "yaron-Biton@gmail.com",
-      "Yaron Biton Show",
-      utilService.makeLorem(15)
+      "Muki Ben David",
+      "MukiBenDavid@puki.co.il",
+      "The mention of my name",
+      `Dear AppSus members, please tell Yaron Biton stop using my name at every variable he makes. That's not funny anymore.`
     )
   );
   gMails.push(
     createMail(
-      "Manham",
-      "manham-cohen@gmail.com",
-      "New day",
-      utilService.makeLorem(20)
+      "Satoshi Nakmoto",
+      "satoshin@gmx.com",
+      "No worries, Bitcoin's crypto is strong",
+      `SHA-256 is very strong.  It's not like the incremental step from MD5 to SHA1.  It can last several decades unless there's some massive breakthrough attack.`
     )
   );
   gMails.push(

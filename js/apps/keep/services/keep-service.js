@@ -14,7 +14,8 @@ export default {
     editNote,
     sendNote,
     getNoteTypeById,
-    updateNote
+    updateNote,
+    getNoteById
 }
 
 function createNotes() {
@@ -33,7 +34,7 @@ function createNotes() {
             "isPinned": true,
             "info": {
                 "txt": 'Asi we need you',
-                "url": "./assets/imgs/hero.jpg"
+                "url": "assets/imgs/hero.jpg"
             },
             "bgc": 'rgb(232, 234, 237)',
         },
@@ -100,6 +101,16 @@ function createNotes() {
             "bgc": 'rgb(232, 234, 237)',
         },
         {
+            "type": "imgNote",
+            "id": utilService.makeId(),
+            "isPinned": true,
+            "info": {
+                "txt": 'Buy iPhone 12',
+                "url": "https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2020/08/apple-iphone-12-everythingapplepro-1598604949.jpg"
+            },
+            "bgc": 'rgb(232, 234, 237)',
+        },
+        {
             "type": 'videoNote',
             "id": utilService.makeId(),
             "isPinned": true,
@@ -143,18 +154,14 @@ function createNotes() {
             },
             "bgc": 'rgb(232, 234, 237)',
         },
-        {
-            "type": 'textNote',
-            "id": utilService.makeId(),
-            "isPinned": true,
-            "info": {
-                txt: `here are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. `
-            },
-            "bgc": 'rgb(232, 234, 237)',
-        },
     ]
     utilService.storeToStorage(STORAGE_KEY, notes);
     return notes;
+}
+
+function getNoteById(noteId) {
+    const note = notes.find(note => note.id === noteId);
+    return Promise.resolve(note);
 }
 
 function getNoteTypeById(noteId) {

@@ -3,6 +3,8 @@ import emailList from "../../email/cmps/email-list.cmp.js";
 import filterEmail from "../cmps/email-filter.cmp.js";
 import emailNav from "../cmps/email-nav.cmp.js"
 import emailCompose from "../cmps/email-compose.cmp.js"
+import { eventBus } from '../../../services/event-bus-service.js'
+import keepService from '../../../apps/keep/services/keep-service.js'
 
 export default {
   name: "email-app",
@@ -13,7 +15,7 @@ export default {
         <email-nav @open-compose='isComposeOpen = true'></email-nav>
         <router-view @mailRemove="loadMailsAfterRemove" :mails="emailsToshow"></router-view>
         <!-- <email-list @mailRemove="loadMailsAfterRemove" :mails="emailsToshow"></email-list> -->
-        <email-compose v-if="isComposeOpen" @close-compose="isComposeOpen = false"></email-compose>
+        <email-compose :mail="currentMail" v-if="isComposeOpen" @close-compose="isComposeOpen = false"></email-compose>
         </div>  
       </section>
     `,
@@ -22,7 +24,8 @@ export default {
       mails: null,
       filterBy: null,
       mailsCategory: this.$route.params.mailsCategory,
-      isComposeOpen: false
+      isComposeOpen: false,
+      currentMail: null
     };
   },
   methods: {
@@ -44,6 +47,28 @@ export default {
       const mailsAfterRemove = mails.filter(mail => !mail.isRemoved)
       this.mails = mailsAfterRemove;
     },
+    setCurrentMail(mail) {
+      this.currentMail = mail
+      this.isComposeOpen = true;
+    },
+    convertEmbeddedNote(note) {
+      const noteURL = (note.info.url) ? note.info.url : ''
+      return {
+        subject: '',
+        senderMail: '',
+        body: note.info.txt + ' ' + noteURL
+      }
+    },
+    convertTodoNote(note) {
+      let body = note.info.todos.map((todo, idx) => {
+        return `${idx}. ${todo.txt}\n`
+      }).join('');
+      return {
+        subject: '',
+        senderMail: '',
+        body
+      }
+    }
   },
   computed: {
     emailsToshow() {
@@ -64,24 +89,32 @@ export default {
     },
   },
   created() {
-    emailService.getMails(this.mailsCategory).then((mails) => {
-      this.mails = mails;
-    })
+    const noteId = this.$route.params.noteId
+    if (this.mailsCategory) {
+      emailService.getMails(this.mailsCategory).then((mails) => {
+        this.mails = mails;
+      });
+    }
+    if (noteId) {
+      keepService.getNoteById(noteId)
+        .then(currNote => {
+          if (currNote.type === 'todoNote') {
+            const mailedNote = this.convertTodoNote(currNote)
+            this.setCurrentMail(mailedNote);
+          } else {
+            const mailedNote = this.convertEmbeddedNote(currNote)
+            this.setCurrentMail(mailedNote);
+          }
+        })
+    }
+    eventBus.$on('editDraft', this.setCurrentMail)
   }, watch: {
     '$route.params.mailsCategory'() {
-      if (this.$route.query.subject) {
-        return
-      } else {
-        this.mailsCategory = this.$route.params.mailsCategory
-        emailService.getMails(this.mailsCategory).then((mails) => {
-          this.mails = mails;
-        })
-      }
+      this.mailsCategory = this.$route.params.mailsCategory
+      emailService.getMails(this.mailsCategory).then((mails) => {
+        this.mails = mails;
+      })
     },
-    '$route.query.subject'() {
-      console.log(this.$route.query.subject,this.$route.query.body)
-      this.isComposeOpen = true;
-    }
   },
   components: {
     emailService,

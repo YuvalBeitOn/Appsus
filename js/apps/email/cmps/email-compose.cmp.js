@@ -4,18 +4,19 @@ export default {
   name: "email-compose",
   template: `
             <section class="email-compose compose-form flex column wrap align-center">
-               <form @submit="submitMessage">
+               <form>
                   <div class="header-compose">
-                  <button class="btn-close" @click="closeCompose">X</button>
+                  <button class="btn-close" @click="closeCompose" type="button">X</button>
                   </div>
                   <input type="text" placeholder="To:" v-model.trim="composeMsg.to" required/>
                   <input type="text" placeholder="Subject"  v-model.trim="composeMsg.subject"/>
                   <textarea id="message" v-model="composeMsg.body" placeholder="Enter Your msg" name="compose-msg" rows="4" cols="50" >
                   </textarea>
-                  <button class="send-compose">Send Massage</button>
+                  <button class="send-compose" type="button" @click="submitMessage">Send Massage</button>
                </form>
             </section>
       `,
+  props: ['mail'],
   data() {
     return {
       composeMsg: {
@@ -49,11 +50,16 @@ export default {
       })
     },
   },
-  // created(){
-  //   console.log(this.$route)
-  // },
+  created() {
+    if (this.mail) {
+      const { senderMail, subject, body } = this.mail
+      this.composeMsg.to = senderMail;
+      this.composeMsg.subject = subject;
+      this.composeMsg.body = body;
+    }
+
+  },
   destroyed() {
-    // console.log(this.isSubmitted)
     if (this.isSubmitted) {
       return;
     } else {

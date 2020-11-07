@@ -56,7 +56,7 @@ export default {
             eventBus.$emit('editInsideNote', this.note);
         },
         sendToMail() {
-            keepService.sendNote(this.note);
+            this.$router.push(`/email/compose/${this.note.id}`);
         },
     },
     components: {

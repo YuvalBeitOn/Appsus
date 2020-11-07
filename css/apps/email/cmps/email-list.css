@@ -3,5 +3,13 @@
 }
 
 .email-list{
-    min-width: 62.5rem;
+    width: 62.5rem;
+}
+
+@media (max-width:1090px){
+    .email-list{
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
 }

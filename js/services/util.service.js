@@ -6,6 +6,7 @@ export const utilService = {
     getRandomPrice,
     getRandomSale,
     getRandomCurrency,
+    toggleNavMail,
 }
 
 function storeToStorage(key, value) {
@@ -54,4 +55,15 @@ function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
+function toggleNavMail(){
+    const navBarMail = document.querySelector('.nav-bar-email');
+    navBarMail.classList.toggle('open-nav')
+    // if(navBarMail.display==='block'){
+    //     console.log('ds');
+    //     navBarMail.display='none';
+    // }else{
+    //     console.log('sd');
+    //     navBarMail.display='block';
+    // }
 }

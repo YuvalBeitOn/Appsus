@@ -13,8 +13,8 @@ const myRoutes = [{
         component: homePage
     },
     {
-        path: '/email/compose/',
-        component: emailCompose
+        path: '/email/compose/:noteId',
+        component: emailApp
     },
     {
         path: '/book',
@@ -35,7 +35,7 @@ const myRoutes = [{
         component: emailApp
     },
     {
-        path: '/email/:noteId?',
+        path: '/email',
         component: emailApp,
         children: [{
                 path: '/email/:mailsCategory',

@@ -12,17 +12,23 @@
 }
 
 .email-sender {
-    min-width: 130px;
+    min-width: 8.125rem;
     margin-left: 1rem;
 }
 
 .email-body {
     margin-left: 1rem;
+    margin-right: 5rem;
+
+    /* min-width: 31.25rem; */
 }
 
 .email-date {
     position: absolute;
-    right: 10px;
+    right: 0.625rem;
+    margin-left: 5rem;
+    text-align: right;
+    z-index: 5;
 }
 
 /* Dynamic class for preview: */
@@ -46,4 +52,10 @@
 
 .star:hover {
     opacity: 1;
+}
+
+@media (max-width:580px){
+    .email-date{
+        bottom: 0;
+    }
 }

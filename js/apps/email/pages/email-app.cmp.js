@@ -4,6 +4,7 @@ import filterEmail from "../cmps/email-filter.cmp.js";
 import emailNav from "../cmps/email-nav.cmp.js"
 import emailCompose from "../cmps/email-compose.cmp.js"
 import { eventBus } from '../../../services/event-bus-service.js'
+import keepService from '../../../apps/keep/services/keep-service.js'
 
 export default {
   name: "email-app",
@@ -49,6 +50,24 @@ export default {
     setCurrentMail(mail) {
       this.currentMail = mail
       this.isComposeOpen = true;
+    },
+    convertEmbeddedNote(note) {
+      const noteURL = (note.info.url) ? note.info.url : ''
+      return {
+        subject: '',
+        senderMail: '',
+        body: note.info.txt + ' ' + noteURL
+      }
+    },
+    convertTodoNote(note) {
+      let body = note.info.todos.map((todo, idx) => {
+        return `${idx}. ${todo.txt}\n`
+      }).join('');
+      return {
+        subject: '',
+        senderMail: '',
+        body
+      }
     }
   },
   computed: {
@@ -70,9 +89,24 @@ export default {
     },
   },
   created() {
-    emailService.getMails(this.mailsCategory).then((mails) => {
-      this.mails = mails;
-    });
+    const noteId = this.$route.params.noteId
+    if (this.mailsCategory) {
+      emailService.getMails(this.mailsCategory).then((mails) => {
+        this.mails = mails;
+      });
+    }
+    if (noteId) {
+      keepService.getNoteById(noteId)
+        .then(currNote => {
+          if (currNote.type === 'todoNote') {
+            const mailedNote = this.convertTodoNote(currNote)
+            this.setCurrentMail(mailedNote);
+          } else {
+            const mailedNote = this.convertEmbeddedNote(currNote)
+            this.setCurrentMail(mailedNote);
+          }
+        })
+    }
     eventBus.$on('editDraft', this.setCurrentMail)
   }, watch: {
     '$route.params.mailsCategory'() {
@@ -81,9 +115,6 @@ export default {
         this.mails = mails;
       })
     },
-    '$route.params.noteId'(){
-      console.log(this.$route.noteId)
-    }
   },
   components: {
     emailService,

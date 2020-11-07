@@ -1,9 +1,12 @@
 .nav-bar-email {
     margin-top: 1.5625rem;
-    width: 21.875rem;
-    margin-left: 3.625rem
+    /* min-width: 21.875rem; */
+    margin-left: 3.625rem;
+    margin-right: 3.625rem;
 }
-
+.nav-hm,.btn-close-nav{
+    display: none;
+}
 .link-nav {
     padding: 3px 15px;
     margin-bottom: 5px;
@@ -35,3 +38,18 @@
 .title-compose {
     font-weight: 600;
 }
+
+@media (max-width:1200px){
+    .nav-bar-email{
+        min-width: fit-content;
+    }
+    .nav-bar-email{
+        /* z-index: 100;
+        width: 100vw; */
+        display: none;
+    }
+    /* .nav-bar-email.open-nav{
+        display: block;
+    } */
+}
+

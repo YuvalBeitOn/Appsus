@@ -40,7 +40,7 @@ It uses utility classes for typography and spacing to space content out within t
 <div class="box-features flex column wrap justify-center align-center">
 <i class="icon-box word-green fas fa-book"></i>
 <h3 class="title-box">Books</h3>
-<p class="text-box">Save your favorite books!now you can save all the books that you love and looking for new books!</p>
+<p class="text-box">Save your favorite books! now you can save all the books that you love and looking for new books!</p>
 <router-link to="/book" exact><button class="btn-home">Learn More</button>
 </router-link>
 </div>
@@ -59,7 +59,7 @@ Quickly filter and search for notes by color and other attributes like lists wit
 <router-link to="/keep" exact><button class="btn-home">Learn More</button>
 </router-link>
 </div>
-<img src="../../assets/imgs/mocupkeep.jpg" class="image-info"  alt="">
+<img src="./assets/imgs/mocupkeep.jpg" class="image-info"  alt="">
 </div>
 </div>
 

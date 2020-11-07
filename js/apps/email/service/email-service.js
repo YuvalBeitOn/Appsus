@@ -51,8 +51,10 @@ function getMailById(id) {
 function removeMail(id) {
   const idx = gMails.findIndex((mail) => mail.id === id);
   const mail = gMails[idx];
-  if (mail.isRemoved) gMails.splice(idx, 1);
-  else gMails[idx].isRemoved = true;
+  if (mail.isRemoved){
+    gMails.splice(idx, 1)
+  }else gMails[idx].isRemoved = true;
+  
   return Promise.resolve();
 }
 
@@ -62,8 +64,8 @@ function _createMails() {
   gMails = [];
   gMails.push(
     createMail(
-      "Orel Vaizman",
-      "oraelv@gmail.com",
+      "Guy Indepurker",
+      "guy@gmail.com",
       "AppSus Meeting",
       `Dear team-members,
       I would like to set a meet-up at 5 o'clock. We have four hours to go and this time we gonna take the briefcase!`,
@@ -81,8 +83,8 @@ function _createMails() {
   );
   gMails.push(
     createMail(
-      "Satoshi Nakmoto",
-      "satoshin@gmx.com",
+      "Orel Vaizman",
+      "Oraelv@Gmail.Com",
       "No worries, Bitcoin's crypto is strong",
       `SHA-256 is very strong.  It's not like the incremental step from MD5 to SHA1.  It can last several decades unless there's some massive breakthrough attack.`,
       Math.random() >= 0.65

@@ -1,11 +1,14 @@
 .nav-bar-email {
   margin-top: 1.5625rem;
-  max-width: 100px;
+  /* max-width: 100px; */
   margin-left: 3.625rem;
   margin-right: 3.625rem;
 }
 .nav-hm {
   display: none;
+}
+.container-controls-nav{
+  min-width: 7.5rem;
 }
 .link-nav {
   padding: 3px 15px;
@@ -39,11 +42,14 @@
 }
 
 @media (max-width: 800px) {
+  .container-controls-nav{
+    max-width: 7.5rem;
+
+  }
 
   .nav-bar-email {
     z-index: 100;
-    /* width: 100vw; */
-    display: none;
+    display: none ;
     margin: 0;
     position: absolute;
     background-color: rgba(252, 252, 252, 0.926);
@@ -64,5 +70,8 @@
   }
   .nav-bar-email.open-nav {
     display: block;
+  }
+  .nav-bar-email.hide-nav {
+    display: none !important;
   }
 }

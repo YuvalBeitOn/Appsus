@@ -24,3 +24,6 @@
 .sort-msg:focus{
     outline: none;
 }
+.email-filter{
+    margin-bottom: 0.75rem;
+}

@@ -14,7 +14,7 @@ export default {
         <filter-email @filtered="setFilter"></filter-email>
         <div class="flex justify-center">
         <i @click="toggleNavBar" class="btn-hamburger nav-hm fas fa-bars"></i>
-        <email-nav @toggleNavBar="toggleNavBar" @open-compose='isComposeOpen = true' :class="navClass"></email-nav>
+        <email-nav  @toggleNavBar="toggleNavBar" @open-compose='isComposeOpen = true' :class="navClass"></email-nav>
         <router-view @mailRemove="loadMailsAfterRemove" :mails="emailsToshow"></router-view>
         <email-compose :mail="currentMail" v-if="isComposeOpen" @close-compose="isComposeOpen = false"></email-compose>
         </div>  
@@ -100,7 +100,7 @@ export default {
       if(this.isNavShow){
         return 'open-nav'
       } else{
-        return ''
+        return 'hide-nav'
       }
       
     }

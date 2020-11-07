@@ -1,5 +1,5 @@
 export default {
-  template: `
+    template: `
     <section class="home-page ">
     <div class="jumbotron ">
         <div class="container flex column  wrap align-center">
@@ -32,8 +32,8 @@ It uses utility classes for typography and spacing to space content out within t
 </div>
 <div class="box-features flex column wrap justify-center align-center">
 <i class="icon-box word-yellow fas fa-sticky-note"></i>
-<h3 class="title-box ">Keeps</h3>
-<p class="text-box">Save your note and your ides in one app! now you can save all the things you need to do or impotent things and just write its powerful tool!</p>
+<h3 class="title-box ">Keep</h3>
+<p class="text-box">Quickly capture what's on your mind and share those thoughts with friends and family. Save your note and your ideas in one powerful app! </p>
 <router-link to="/keep" exact><button class="btn-home">Learn More</button>
 </router-link>
 </div>

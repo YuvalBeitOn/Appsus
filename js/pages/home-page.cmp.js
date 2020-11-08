@@ -10,10 +10,9 @@ It uses utility classes for typography and spacing to space content out within t
 
 <div class="controls-btn">
             <router-link to="/email/inbox" exact><button class="btn-home">Email</button></router-link>
-            <router-link to="/keep" exact><button class="btn-home">Keep</button>
-</router-link>
-            <router-link to="/books" exact><button class="btn-home">Books</button>
-</router-link>
+            <router-link to="/keep" exact><button class="btn-home">Keep</button></router-link>
+            <router-link to="/books" exact><button class="btn-home">Books</button></router-link>
+
 
 </div>
 </div>

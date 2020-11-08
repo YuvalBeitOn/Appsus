@@ -5,7 +5,9 @@
     height: fit-content;
     width: 31.25rem;
     position: absolute;
-    bottom: 100px;
+    bottom: 50%;
+    right:50%;
+    transform: translate(50%,50%);
     box-shadow: 0 0px 3px rgb(96, 96, 96);
     outline: 1px solid black;
 }

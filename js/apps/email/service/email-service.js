@@ -51,8 +51,9 @@ function getMailById(id) {
 function removeMail(id) {
   const idx = gMails.findIndex((mail) => mail.id === id);
   const mail = gMails[idx];
-  if (mail.isRemoved) gMails.splice(idx, 1);
-  else gMails[idx].isRemoved = true;
+  if (mail.isRemoved){
+    gMails.splice(idx, 1)
+  }else gMails[idx].isRemoved = true;
   return Promise.resolve();
 }
 
@@ -62,11 +63,11 @@ function _createMails() {
   gMails = [];
   gMails.push(
     createMail(
-      "Orel Vaizman",
-      "oraelv@gmail.com",
-      "AppSus Meeting",
-      `Dear team-members,
-      I would like to set a meet-up at 5 o'clock. We have four hours to go and this time we gonna take the briefcase!`
+      "AppSus Team",
+      "support@appsus.com",
+      "Welcome to AppSus",
+      `First off, welcome. And thanks for agreeing to help us test AppSus Email. By now you probably know the key ways in which AppSus differs from traditional webmail services. Searching instead of filing. A free gigabyte of storage. Messages displayed in context as conversations.`,
+      Math.random() >= 0.65
     )
   );
   gMails.push(
@@ -74,94 +75,111 @@ function _createMails() {
       "Muki Ben David",
       "MukiBenDavid@puki.co.il",
       "The mention of my name",
-      `Dear AppSus members, please tell Yaron Biton stop using my name at every variable he makes. That's not funny anymore.`
+      `Dear AppSus members, please tell Yaron Biton stop using my name at every variable he makes. That's not funny anymore.`,
+      Math.random() >= 0.65
+    )
+  );
+
+  gMails.push(
+    createMail(
+      "Brazzers LTD",
+      "donotreply@brazzers.com",
+      "Your Brazzers subscription expired!",
+      "Dear memeber, your Brazzers subscription has been expired. As a good gesture we've added an extension of one week to your membership. Please make sure to make a renewal at Brazzers.com",
+      Math.random() >= 0.65
     )
   );
   gMails.push(
     createMail(
-      "Satoshi Nakmoto",
-      "satoshin@gmx.com",
-      "No worries, Bitcoin's crypto is strong",
-      `SHA-256 is very strong.  It's not like the incremental step from MD5 to SHA1.  It can last several decades unless there's some massive breakthrough attack.`
+      "Netflix",
+      "donotreply@netflix.com",
+      "New watcher has been added",
+      `Dear member, the new watcher "AhSheli-Yakar" has been added succesfuly. Please make sure not to exceed your simultaneously watchers limit.`,
+      Math.random() >= 0.65
     )
   );
   gMails.push(
     createMail(
-      "Bob Habani",
-      "bobTheMen@gmail.com",
-      "I Have Work for you",
-      utilService.makeLorem(5)
+      "Binance",
+      "do_not_reply@mailer2.binance.com‏",
+      "Binance: QUOTE OF THE WEEK",
+      `"The bitcoin world is this new ecosystem where it doesn’t cost that much to start a new Bitcoin company, it doesn’t cost much to start owning Bitcoin either, and it is a much more efficient way of moving money around the world." Tim Draper, venture capital investor
+      `,
+      Math.random() >= 0.65
     )
   );
   gMails.push(
     createMail(
-      "Yoel Shani",
-      "yoel-antz@gmail.com",
-      "You must to be content with me ",
-      utilService.makeLorem(10)
+      "Apple inc. ",
+      "donotreply@apple.com",
+      "New purchase was made succesfuly!",
+      "Dear member, a new purchase was made succesfuly. " + utilService.makeLorem(10),
+      Math.random() >= 0.65
+
     )
   );
   gMails.push(
     createMail(
-      "Bob Dylan",
-      "bob-dylan@gmail.com",
-      "I hear about the new movie? ",
-      utilService.makeLorem(10)
+      "Check Point Security",
+      "no-reply@csa-challenge.com",
+      "Confirm your account for Check Point Security Academy 2020‏",
+      `Thanks for signing up to the Check Point Security Academy website.
+      On our website you can find all the information you need about our upcoming course and the challenges that you need to solve to join our class of 2020 and become the ultimate ninja.
+      Do you think you have what it takes? Come and show us!
+      `,
+      Math.random() >= 0.65
     )
   );
   gMails.push(
     createMail(
-      "Tomer aviv",
-      "lamalo@gmail.com",
-      "I going to us tomorrow ",
-      utilService.makeLorem(10)
-    )
-  );
-  gMails.push(
-    createMail(
-      "Niv Shamsi",
-      "niv-shamsi@gmail.com",
+      "Pinterest‏",
+      "confirm@account.pinterest.com",
       "I am in israel",
-      utilService.makeLorem(10)
+      `Please take a second to make sure we’ve got your email right. Didn’t sign up for Pinterest?
+      `,
+      Math.random() >= 0.65
     )
   );
   gMails.push(
     createMail(
-      "Barel Zrian",
-      "Barel-zrian@gmail.com",
-      "Blitz digital come to us",
-      utilService.makeLorem(10)
+      "AliExpress",
+      "transaction@notice.aliexpress.com‏",
+      "Order 8120198035236134 is good to go!",
+      `The payment for order 8120198035236134 has been confirmed! We'll let you know when your order ships. You can also sign in to AliExpress to see more details.`,
+      Math.random() >= 0.65
     )
   );
   gMails.push(
     createMail(
-      "Adir Surya",
-      "beni-antz@gmail.com",
-      "I am going to study",
-      utilService.makeLorem(10)
+      "eBay",
+      "ebay@ebay.com",
+      "Thanks, your order is confirmed.",
+      `We’ll let you know when your order is on the way. The estimated delivery time to order number #2261983855015 is: : Wed. May. 30 - Wed. Jul. 11. eBay will update the estimate when it ships to your address.`,
+      Math.random() >= 0.65
     )
   );
   gMails.push(
     createMail(
       "Maria",
-      "beni-antz@gmail.com",
-      "Jorge? I need to speak with you",
-      utilService.makeLorem(10)
+      "Maria_1211@gmail.com",
+      "Can't wait to meet you up",
+      "It seems like since we've met at that vacation, I can't get you out of my head. I am smelling the boxers you've left at my room everyday that passes. I am wishing for the moment that we can meet up again. Awaiting for your response, Maria.",
+      Math.random() >= 0.65
     )
   );
   return gMails;
 }
 
-function createMail(sender, senderMail, subject, body) {
+function createMail(sender, senderMail, subject, body, isTrue = false) {
   return {
     id: utilService.makeId(),
     sender,
     senderMail,
     subject,
     body,
-    isRead: false,
-    isSent: false,
-    isStarred: false,
+    isRead: isTrue,
+    isSent: isTrue,
+    isStarred: isTrue,
     isDraft: false,
     isRemoved: false,
     sentAt: Date.now(),

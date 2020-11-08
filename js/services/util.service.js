@@ -59,11 +59,4 @@ function getRandomInt(min, max) {
 function toggleNavMail(){
     const navBarMail = document.querySelector('.nav-bar-email');
     navBarMail.classList.toggle('open-nav')
-    // if(navBarMail.display==='block'){
-    //     console.log('ds');
-    //     navBarMail.display='none';
-    // }else{
-    //     console.log('sd');
-    //     navBarMail.display='block';
-    // }
 }

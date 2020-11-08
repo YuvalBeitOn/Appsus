@@ -42,7 +42,6 @@ export default {
                 this.$router.push(`/email/${this.mailsCategory}/${this.mail.id}`)
             } else {
                 eventBus.$emit('editDraft', this.mail)
-                // console.log('I am a draft')
             }
         },
     },

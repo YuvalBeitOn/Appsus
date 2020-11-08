@@ -3,7 +3,9 @@
     padding: 0.3125rem 0;
     border-bottom: 1px solid lightgrey;
     position: relative;
-
+    max-height: 1.875rem;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .email-preview:hover {

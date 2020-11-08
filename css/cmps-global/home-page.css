@@ -1,19 +1,24 @@
 /* Jumbotron style */
 .home-page .jumbotron{
+    background-color: #0056c6cb;
     padding: 2.5rem 1rem;
     margin-bottom: 2rem;
-    color: #202224;
+    color: white;
+    font-weight: 500;
     border-bottom-left-radius: .3rem;
     border-bottom-right-radius: .3rem;
-    background-color: #F8F9FA!important;
     font-weight: 300;
     height: 450px;
     width: 100vw;
     margin-bottom:10rem ;
 }
 .title-home-page{
+    margin-top: 2.8rem;
     font-size: 2.8rem;
     margin-bottom: 2rem;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 0 0 4px black;
+    text-transform: capitalize;
 }
 .home-page p{
     margin-bottom: 5px;
@@ -80,6 +85,9 @@
     }
     .box-features .btn-home{
         margin-top: 3rem;
+    }
+    .title-home-page{
+        margin-top: 0;
     }
 
 }

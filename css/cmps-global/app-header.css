@@ -1,6 +1,5 @@
 .app-header{
     background-color:#F8F9FA;
-    /* background-color: rgb(90, 187, 194); */
     color: white;
     padding: 10px;
     border-bottom: 1px solid lightgrey;
@@ -17,10 +16,10 @@ margin-right: 0.3125rem;
 }
 .logo{
     font-family: 'Roboto', sans-serif;
-
     font-weight: 400;
     text-transform: capitalize;
     color:#202224;
+    text-shadow: 1px 0px 0px #1a73e8cc;
 }
 .word-blue{
     color:#4B8AF4;
@@ -38,6 +37,5 @@ margin-right: 0.3125rem;
     font-size: 2rem;
 }
 .app-header a.router-link-active {
-    /* background-color: #E7F0FE; */
     font-weight: bolder;
   }

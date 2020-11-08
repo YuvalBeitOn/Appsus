@@ -100,10 +100,11 @@ function _createMails() {
   );
   gMails.push(
     createMail(
-      "Sathushi Nakamoto",
-      "satoshin@gmx.com",
-      "No worries, Bitcoin's crypto is strong",
-      `SHA-256 is very strong.  It's not like the incremental step from MD5 to SHA1.  It can last several decades unless there's some massive breakthrough attack.`,
+      "Binance",
+      "do_not_reply@mailer2.binance.com‏",
+      "Binance: QUOTE OF THE WEEK",
+      `"The bitcoin world is this new ecosystem where it doesn’t cost that much to start a new Bitcoin company, it doesn’t cost much to start owning Bitcoin either, and it is a much more efficient way of moving money around the world." Tim Draper, venture capital investor
+      `,
       Math.random() >= 0.65
     )
   );

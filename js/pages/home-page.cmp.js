@@ -96,7 +96,7 @@ AppSus' Books-shop offers a big variety of books to purchase in a comfortable pl
     <div class="box-team flex column justify-center align-center wrap">
 <img src="assets/imgs/team/team-orel.jpg" class="image-team"  alt="">
     <h2 class="title-box title-team ml-5">Orel Vaizman</h2>
-    <p class="text-box text-team  mb-5 ml5">22 years old from Kiryat-Gat, Israel. Tech-Lover ever since was youth. Crypto-Currency Investor, and a future web-developer</p>
+    <p class="text-box text-team  mb-5 ml5">22 years old from Kiryat-Gat, Israel. Tech-Lover ever since I was youth. I am very passionate about coding and especially web-development. Loves to achieve challenges.</p>
     <ul class="social-icons clean-list flex justify-center">
 <li class="team-icon-social"><a href="https://www.facebook.com/OrelVaizman"><i class="item-social fab fa-facebook-f"></i></a></li>
 <li class="team-icon-social"><a href="https://www.linkedin.com/in/orel-vaizman-723a94122/"><i class="item-social fab fa-linkedin-in"></i></a></li>

@@ -63,11 +63,10 @@ function _createMails() {
   gMails = [];
   gMails.push(
     createMail(
-      "Guy Indepurker",
-      "guy@gmail.com",
-      "AppSus Meeting",
-      `Dear team-members,
-      I would like to set a meet-up at 5 o'clock. We have four hours to go and this time we gonna take the briefcase!`,
+      "AppSus Team",
+      "support@appsus.com",
+      "Welcome to AppSus",
+      `First off, welcome. And thanks for agreeing to help us test AppSus Email. By now you probably know the key ways in which AppSus differs from traditional webmail services. Searching instead of filing. A free gigabyte of storage. Messages displayed in context as conversations.`,
       Math.random() >= 0.65
     )
   );
@@ -80,15 +79,7 @@ function _createMails() {
       Math.random() >= 0.65
     )
   );
-  gMails.push(
-    createMail(
-      "Orel Vaizman",
-      "Oraelv@Gmail.Com",
-      "No worries, Bitcoin's crypto is strong",
-      `SHA-256 is very strong.  It's not like the incremental step from MD5 to SHA1.  It can last several decades unless there's some massive breakthrough attack.`,
-      Math.random() >= 0.65
-    )
-  );
+
   gMails.push(
     createMail(
       "Brazzers LTD",
@@ -104,6 +95,15 @@ function _createMails() {
       "donotreply@netflix.com",
       "New watcher has been added",
       `Dear member, the new watcher "AhSheli-Yakar" has been added succesfuly. Please make sure not to exceed your simultaneously watchers limit.`,
+      Math.random() >= 0.65
+    )
+  );
+  gMails.push(
+    createMail(
+      "Sathushi Nakamoto",
+      "satoshin@gmx.com",
+      "No worries, Bitcoin's crypto is strong",
+      `SHA-256 is very strong.  It's not like the incremental step from MD5 to SHA1.  It can last several decades unless there's some massive breakthrough attack.`,
       Math.random() >= 0.65
     )
   );
@@ -150,11 +150,10 @@ function _createMails() {
   );
   gMails.push(
     createMail(
-      "Dror Uzi",
-      "droru@misterbit.co.il",
-      "Dror Uzi has shared a calender with you!",
-      `Dear AppSus' member,
-      Please navigate to our Keep Services in order to see the smart-calender that "Dror Uzi" has share with you.`,
+      "eBay",
+      "ebay@ebay.com",
+      "Thanks, your order is confirmed.",
+      `We’ll let you know when your order is on the way. The estimated delivery time to order number #2261983855015 is: : Wed. May. 30 - Wed. Jul. 11. eBay will update the estimate when it ships to your address.`,
       Math.random() >= 0.65
     )
   );

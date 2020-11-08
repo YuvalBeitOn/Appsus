@@ -15,7 +15,7 @@ export default {
         :key="note.id" 
         :note="note"
         :editNote="editNote">
-        <note-controls :note="note" :isShowen="isHovering"></note-controls>
+            <note-controls :note="note" :isShowen="isHovering"></note-controls>
         </component>
     </section>
     `,

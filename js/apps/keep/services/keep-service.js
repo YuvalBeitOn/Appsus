@@ -168,7 +168,7 @@ function getNoteTypeById(noteId) {
     return note.type;
 }
 
-function editNote(noteId, newVal, idx) {
+function editNote(noteId, newVal, idx=null) {
     const note = notes.find(note => note.id === noteId);
     if (note.type !== 'todoNote') note.info.txt = newVal;
     else {
@@ -210,18 +210,19 @@ function deleteNote(noteId) {
 function addNote(note) {
     if (note.type === 'todoNote') {
         const todos = note.info.txt.split(',');
-        note.info.todos = todos.map(todo => {
-            return { 'txt': todo, 'isDone': false }
-        });
+        note.info.todos = todos.map(todo => ({ 'txt': todo, 'isDone': false }));
     }
     note.id = utilService.makeId();
     note.bgc = 'rgb(232, 234, 237)';
     notes.push(note);
+    utilService.storeToStorage(STORAGE_KEY, notes);
+    return Promise.resolve(note);
 }
 
 function updateNote(note) {
     const idx = notes.findIndex(currNote => note.id === currNote.id);
+    note.updatedAt = Date.now();
     notes.splice(idx, 1, note);
-    // utilService.storeToStorage(STORAGE_KEY, notes);
-    // return Promise.resolve(note);
+    utilService.storeToStorage(STORAGE_KEY, notes);
+    return Promise.resolve(note);
 }

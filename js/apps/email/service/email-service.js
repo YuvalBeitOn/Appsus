@@ -10,9 +10,10 @@ export const emailService = {
 };
 
 function getMails(mailsCategory) {
+  var mails = gMails;
   switch (mailsCategory) {
     case "all":
-      return Promise.resolve(gMails.filter((mail) => !mail.isDraft));
+      mails = gMails.filter((mail) => !mail.isDraft);
     case "drafts":
       return Promise.resolve(gMails.filter((mail) => mail.isDraft));
     case "starred":
@@ -26,6 +27,7 @@ function getMails(mailsCategory) {
         gMails.filter((mail) => !mail.isRemoved && !mail.isDraft)
       );
   }
+  return Promise.resolve(mails)
 }
 
 function sendMail(mail, isDraft) {
@@ -35,13 +37,14 @@ function sendMail(mail, isDraft) {
     mail.isSent = true;
   }
   gMails.unshift(mail);
-  return Promise.resolve();
+  return Promise.resolve(mail);
 }
 
 function toggleMailStar(mailId) {
-  return Promise.resolve(
-    getMailById(mailId).then((mail) => (mail.isStarred = !mail.isStarred))
-  );
+  return getMailById(mailId)
+    .then((mail) => {
+      mail.isStarred = !mail.isStarred;
+    })
 }
 
 function getMailById(id) {
@@ -51,9 +54,9 @@ function getMailById(id) {
 function removeMail(id) {
   const idx = gMails.findIndex((mail) => mail.id === id);
   const mail = gMails[idx];
-  if (mail.isRemoved){
+  if (mail.isRemoved) {
     gMails.splice(idx, 1)
-  }else gMails[idx].isRemoved = true;
+  } else gMails[idx].isRemoved = true;
   return Promise.resolve();
 }
 
@@ -100,11 +103,10 @@ function _createMails() {
   );
   gMails.push(
     createMail(
-      "Binance",
-      "do_not_reply@mailer2.binance.com‏",
-      "Binance: QUOTE OF THE WEEK",
-      `"The bitcoin world is this new ecosystem where it doesn’t cost that much to start a new Bitcoin company, it doesn’t cost much to start owning Bitcoin either, and it is a much more efficient way of moving money around the world." Tim Draper, venture capital investor
-      `,
+      "Sathushi Nakamoto",
+      "satoshin@gmx.com",
+      "No worries, Bitcoin's crypto is strong",
+      `SHA-256 is very strong.  It's not like the incremental step from MD5 to SHA1.  It can last several decades unless there's some massive breakthrough attack.`,
       Math.random() >= 0.65
     )
   );

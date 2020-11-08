@@ -12,7 +12,6 @@ export default {
     cloneNote,
     createNotes,
     editNote,
-    getNoteTypeById,
     updateNote,
     getNoteById
 }
@@ -163,12 +162,7 @@ function getNoteById(noteId) {
     return Promise.resolve(note);
 }
 
-function getNoteTypeById(noteId) {
-    const note = notes.find(note => note.id === noteId);
-    return note.type;
-}
-
-function editNote(noteId, newVal, idx=null) {
+function editNote(noteId, newVal, idx = null) {
     const note = notes.find(note => note.id === noteId);
     if (note.type !== 'todoNote') note.info.txt = newVal;
     else {
@@ -221,7 +215,7 @@ function addNote(note) {
 
 function updateNote(note) {
     const idx = notes.findIndex(currNote => note.id === currNote.id);
-    note.updatedAt = Date.now();
+    // note.updatedAt = Date.now();
     notes.splice(idx, 1, note);
     utilService.storeToStorage(STORAGE_KEY, notes);
     return Promise.resolve(note);

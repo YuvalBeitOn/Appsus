@@ -27,7 +27,7 @@ export default {
 
         editNote(ev) {
             console.log('id:', ev.target.id);
-            let noteType = keepService.getNoteTypeById(ev.target.id)
+            let noteType = keepService.getNoteById(ev.target.id).type;
             if (noteType === 'todoNote') {
                 const todoIdx = ev.target.attributes.idxintodos.value;
                 keepService.editNote(ev.target.id, ev.target.innerText, todoIdx)
